@@ -1,0 +1,15 @@
+C:\Users\avedo\source\repos\Trgovina2\Trgovina2\bin\Debug\login.accdb
+C:\Users\avedo\source\repos\Trgovina2\Trgovina2\bin\Debug\Trgovina2.exe.config
+C:\Users\avedo\source\repos\Trgovina2\Trgovina2\bin\Debug\Trgovina2.exe
+C:\Users\avedo\source\repos\Trgovina2\Trgovina2\bin\Debug\Trgovina2.pdb
+C:\Users\avedo\source\repos\Trgovina2\Trgovina2\obj\Debug\Trgovina2.csproj.AssemblyReference.cache
+C:\Users\avedo\source\repos\Trgovina2\Trgovina2\obj\Debug\Trgovina2.Form1.resources
+C:\Users\avedo\source\repos\Trgovina2\Trgovina2\obj\Debug\Trgovina2.Properties.Resources.resources
+C:\Users\avedo\source\repos\Trgovina2\Trgovina2\obj\Debug\Trgovina2.csproj.GenerateResource.cache
+C:\Users\avedo\source\repos\Trgovina2\Trgovina2\obj\Debug\Trgovina2.csproj.CoreCompileInputs.cache
+C:\Users\avedo\source\repos\Trgovina2\Trgovina2\obj\Debug\Trgovina2.exe
+C:\Users\avedo\source\repos\Trgovina2\Trgovina2\obj\Debug\Trgovina2.pdb
+C:\Users\avedo\source\repos\Trgovina2\Trgovina2\obj\Debug\Trgovina2.Worker.resources
+C:\Users\avedo\source\repos\Trgovina2\Trgovina2\obj\Debug\Trgovina2.Register.resources
+C:\Users\avedo\source\repos\Trgovina2\Trgovina2\obj\Debug\Trgovina2.Newproduct.resources
+C:\Users\avedo\source\repos\Trgovina2\Trgovina2\obj\Debug\Trgovina2.Removeproduct.resources
