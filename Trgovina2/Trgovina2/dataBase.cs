@@ -17,19 +17,20 @@ namespace Trgovina2
             try
             {
                 con.Open();
-                OleDbDataAdapter sda = new OleDbDataAdapter("select Naziv, Kolicina, Kod, Rok_trajanja from proizvodi where Rok_trajanja >" + new DateTime(2002,1,1).ToString("dd-MM-yy"), con);
+                OleDbDataAdapter sda = new OleDbDataAdapter("select ID, Naziv, Kolicina, Kod, Rok_trajanja from proizvodi where Rok_trajanja >" + new DateTime(2002,1,1).ToString("dd-MM-yy"), con);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
                 foreach(DataRow row in dt.Rows)
                 {
                     ret.Add(new proizvod()
                     {
-                        name = row[0].ToString(),
-                        quant = int.Parse(row[1].ToString()),
-                        code = row[2].ToString(),
+                        id = int.Parse(row[0].ToString()),
+                        name = row[1].ToString(),
+                        quant = int.Parse(row[2].ToString()),
+                        code = row[3].ToString(),
                         //exp = (DateTime)row[3]
 
-                    });
+                    }) ;
                 }
                 con.Close();
             }
@@ -40,6 +41,25 @@ namespace Trgovina2
             }
 
             return ret;
+        }
+
+        public void deleteProduct(proizvod p)
+        {
+            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\login.accdb");
+            try
+            {
+                con.Open();
+                OleDbCommand cmd = new OleDbCommand("delete from proizvodi where ID = " + p.id.ToString(), con);
+                int deleted = cmd.ExecuteNonQuery();
+                Console.WriteLine("broj obrisanih redova " + deleted.ToString());
+                con.Close();
+                Console.WriteLine("tu sam");
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e);
+            }
+            
         }
     }
 }

@@ -12,9 +12,17 @@ namespace Trgovina2
 {
     public partial class deleteProduct : UserControl
     {
+        public int _id;
         public deleteProduct()
         {
             InitializeComponent();
+
+        }
+
+        public int id
+        {
+            get { return _id; }
+            set { _id = value; }
         }
 
         public string name
