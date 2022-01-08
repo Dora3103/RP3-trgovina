@@ -8,6 +8,6 @@
 * ispis računa
 * pretraga po slovima
 * zvjezdice umjesto brojeva na passwordu (opcionalno?)
-
+* staviti role userima, omogucit dodavanje workera samo roli admin
 
 -dodala sam i tablicu zarada - u nju se, u odgovarajući stupac, može samo pridodat cifra konačnog računa
