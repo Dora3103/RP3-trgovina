@@ -16,5 +16,12 @@ namespace Trgovina2
         {
             InitializeComponent();
         }
+
+        private void addProduct1_dodaj(object sender, proizvod e)
+        {
+            dataBase db = new dataBase();
+            db.addProduct(e);
+            MessageBox.Show("Proizvod dodan!");
+        }
     }
 }

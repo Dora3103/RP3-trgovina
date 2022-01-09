@@ -45,7 +45,8 @@ namespace Trgovina2
 
         public DateTime date
         {
-            get { return new DateTime(int.Parse(label4.Text.Split('.')[2]), int.Parse(label4.Text.Split('.')[1]), int.Parse(label4.Text.Split('.')[0])); }
+            //get { return new DateTime(int.Parse(label4.Text.Split('.')[2]), int.Parse(label4.Text.Split('.')[1]), int.Parse(label4.Text.Split('.')[0])); }
+            get { return DateTime.Parse(label4.Text); }
             set { label4.Text = value.ToString("d.M.yyyy"); }
         }
 
