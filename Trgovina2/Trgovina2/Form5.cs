@@ -25,10 +25,18 @@ namespace Trgovina2
 
             dataBase db = new dataBase();
             List<proizvod> proizvodi = db.serachForExpired();
-            for(int i = dpTable.Controls.Count - 1; i > 3; --i){
+            /*for(int i = dpTable.Controls.Count - 1; i > 3; --i){
                 dpTable.Controls.RemoveAt(i);
-            }
-            foreach(proizvod p in proizvodi)
+            }*/
+            deleteProduct header = new deleteProduct();
+            header.delButton = false;
+            header.textSize = 12;
+            RowStyle temp = dpTable.RowStyles[0];
+            dpTable.RowCount++;
+            dpTable.RowStyles.Add(new RowStyle(temp.SizeType, temp.Height));
+            dpTable.Controls.Add(header, 0, dpTable.RowCount - 1);
+            dpTable.SetColumnSpan(header, dpTable.ColumnCount);
+            foreach (proizvod p in proizvodi)
             {
                 deleteProduct dp = new deleteProduct();
                 dp.id = p.id;
@@ -38,7 +46,7 @@ namespace Trgovina2
                 dp.date = p.exp;
                 dp.Width = dpTable.Width;
 
-                RowStyle temp = dpTable.RowStyles[0];
+                temp = dpTable.RowStyles[0];
                 dpTable.RowCount++;
                 dpTable.RowStyles.Add(new RowStyle(temp.SizeType, temp.Height));
                 dpTable.Controls.Add(dp, 0, dpTable.RowCount - 1);

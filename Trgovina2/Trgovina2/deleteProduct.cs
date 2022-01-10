@@ -50,6 +50,27 @@ namespace Trgovina2
             set { label4.Text = value.ToString("d.M.yyyy"); }
         }
 
+        /*public void removeButton()
+        {
+            Controls.Remove(deleteButton);
+        }*/
+
+        public bool delButton
+        {
+            set { deleteButton.Visible = value; }
+        }
+
+        public int textSize
+        {
+            set 
+            { 
+                foreach(Control c in Controls)
+                {
+                    if(c is Label) c.Font = new Font(c.Font.Name, value, c.Font.Style);
+                } 
+            }
+        }
+
         public event EventHandler<proizvod> izbrisi;
 
         private void deleteButton_Click(object sender, EventArgs e)
