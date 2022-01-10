@@ -65,5 +65,12 @@ namespace Trgovina2
             Form1 f = new Form1();
             f.Show();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ListOfProducts f = new ListOfProducts();
+            f.Show();
+        }
     }
 }
