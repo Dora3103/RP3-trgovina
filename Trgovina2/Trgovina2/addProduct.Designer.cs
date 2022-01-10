@@ -62,7 +62,7 @@
             this.label2.Location = new System.Drawing.Point(15, 320);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(153, 25);
-            this.label2.TabIndex = 1;
+            this.label2.TabIndex = 6;
             this.label2.Text = "Datum nabave:";
             // 
             // label3
@@ -72,7 +72,7 @@
             this.label3.Location = new System.Drawing.Point(15, 270);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(129, 25);
-            this.label3.TabIndex = 2;
+            this.label3.TabIndex = 5;
             this.label3.Text = "Rok trajanja:";
             // 
             // label4
@@ -82,7 +82,7 @@
             this.label4.Location = new System.Drawing.Point(15, 220);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(73, 20);
-            this.label4.TabIndex = 3;
+            this.label4.TabIndex = 4;
             this.label4.Text = "Količina:";
             // 
             // label5
@@ -92,7 +92,7 @@
             this.label5.Location = new System.Drawing.Point(15, 170);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(111, 25);
-            this.label5.TabIndex = 4;
+            this.label5.TabIndex = 3;
             this.label5.Text = "Kategorija:";
             // 
             // label6
@@ -102,7 +102,7 @@
             this.label6.Location = new System.Drawing.Point(15, 120);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(76, 25);
-            this.label6.TabIndex = 5;
+            this.label6.TabIndex = 2;
             this.label6.Text = "Cijena:";
             // 
             // label7
@@ -112,7 +112,7 @@
             this.label7.Location = new System.Drawing.Point(15, 70);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(54, 25);
-            this.label7.TabIndex = 6;
+            this.label7.TabIndex = 1;
             this.label7.Text = "Kod:";
             // 
             // dateTextBox
@@ -121,7 +121,7 @@
             this.dateTextBox.Location = new System.Drawing.Point(192, 320);
             this.dateTextBox.Name = "dateTextBox";
             this.dateTextBox.Size = new System.Drawing.Size(285, 23);
-            this.dateTextBox.TabIndex = 7;
+            this.dateTextBox.TabIndex = 13;
             // 
             // quantTextBox
             // 
@@ -129,7 +129,7 @@
             this.quantTextBox.Location = new System.Drawing.Point(192, 220);
             this.quantTextBox.Name = "quantTextBox";
             this.quantTextBox.Size = new System.Drawing.Size(285, 23);
-            this.quantTextBox.TabIndex = 8;
+            this.quantTextBox.TabIndex = 11;
             // 
             // expTextBox
             // 
@@ -137,7 +137,7 @@
             this.expTextBox.Location = new System.Drawing.Point(192, 270);
             this.expTextBox.Name = "expTextBox";
             this.expTextBox.Size = new System.Drawing.Size(285, 23);
-            this.expTextBox.TabIndex = 9;
+            this.expTextBox.TabIndex = 12;
             // 
             // catTextBox
             // 
@@ -153,7 +153,7 @@
             this.priceTextBox.Location = new System.Drawing.Point(192, 122);
             this.priceTextBox.Name = "priceTextBox";
             this.priceTextBox.Size = new System.Drawing.Size(285, 23);
-            this.priceTextBox.TabIndex = 11;
+            this.priceTextBox.TabIndex = 9;
             // 
             // codeTextBox
             // 
@@ -161,7 +161,7 @@
             this.codeTextBox.Location = new System.Drawing.Point(192, 70);
             this.codeTextBox.Name = "codeTextBox";
             this.codeTextBox.Size = new System.Drawing.Size(285, 23);
-            this.codeTextBox.TabIndex = 12;
+            this.codeTextBox.TabIndex = 8;
             // 
             // nameTextBox
             // 
@@ -169,7 +169,7 @@
             this.nameTextBox.Location = new System.Drawing.Point(192, 17);
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(285, 23);
-            this.nameTextBox.TabIndex = 13;
+            this.nameTextBox.TabIndex = 7;
             // 
             // addButton
             // 

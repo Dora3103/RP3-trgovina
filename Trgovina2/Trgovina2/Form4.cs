@@ -13,7 +13,7 @@ namespace Trgovina2
 {
     public partial class Register : Form
     {
-        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\avedo\source\repos\Trgovina2\Trgovina2\login.accdb");
+        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\login.accdb");
         public Register()
         {
             InitializeComponent();

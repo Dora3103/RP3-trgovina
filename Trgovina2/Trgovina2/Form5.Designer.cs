@@ -67,7 +67,7 @@ namespace Trgovina2
             this.dpTable.Name = "dpTable";
             this.dpTable.RowCount = 1;
             this.dpTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.dpTable.Size = new System.Drawing.Size(717, 516);
+            this.dpTable.Size = new System.Drawing.Size(749, 533);
             this.dpTable.TabIndex = 2;
             // 
             // label5
@@ -75,7 +75,7 @@ namespace Trgovina2
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label5.Location = new System.Drawing.Point(444, 15);
+            this.label5.Location = new System.Drawing.Point(450, 256);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(98, 20);
             this.label5.TabIndex = 4;
@@ -87,7 +87,7 @@ namespace Trgovina2
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label4.Location = new System.Drawing.Point(297, 15);
+            this.label4.Location = new System.Drawing.Point(301, 256);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(68, 20);
             this.label4.TabIndex = 3;
@@ -99,7 +99,7 @@ namespace Trgovina2
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label3.Location = new System.Drawing.Point(150, 15);
+            this.label3.Location = new System.Drawing.Point(152, 256);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(38, 20);
             this.label3.TabIndex = 2;
@@ -111,7 +111,7 @@ namespace Trgovina2
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label2.Location = new System.Drawing.Point(3, 15);
+            this.label2.Location = new System.Drawing.Point(3, 256);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(74, 20);
             this.label2.TabIndex = 1;
@@ -122,7 +122,7 @@ namespace Trgovina2
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label6.Location = new System.Drawing.Point(803, 14);
+            this.label6.Location = new System.Drawing.Point(825, 13);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(260, 25);
             this.label6.TabIndex = 3;
@@ -133,11 +133,11 @@ namespace Trgovina2
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(1239, 598);
+            this.ClientSize = new System.Drawing.Size(1286, 598);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.dpTable);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Removeproduct";
             this.Text = "Izbriši proizvod";
             this.dpTable.ResumeLayout(false);

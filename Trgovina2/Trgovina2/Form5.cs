@@ -53,8 +53,7 @@ namespace Trgovina2
                         quant = dp.quant,
                         exp = dp.date
                     });
-                    //this.Invalidate();
-                    this.addToTable();
+                    dpTable.Controls.Remove(dp);
                 };
 
 
@@ -66,6 +65,12 @@ namespace Trgovina2
         {
             dataBase db = new dataBase();
             db.deleteProduct(p);
+            int i = db.checkQuantity(p.name);
+            if (i == -1)
+                MessageBox.Show("Trenutno je manje od 10 komada proizvoda " + p.name + "!");
+            if(i == -2)
+                MessageBox.Show("Više nema proizvoda " + p.name + "!");
+
 
         }
     }

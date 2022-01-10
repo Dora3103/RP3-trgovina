@@ -20,8 +20,10 @@ namespace Trgovina2
         private void addProduct1_dodaj(object sender, proizvod e)
         {
             dataBase db = new dataBase();
-            db.addProduct(e);
-            MessageBox.Show("Proizvod dodan!");
+            if (db.addProduct(e))
+                MessageBox.Show("Proizvod dodan!");
+            else
+                MessageBox.Show("Dogodila se greška!");
         }
     }
 }
