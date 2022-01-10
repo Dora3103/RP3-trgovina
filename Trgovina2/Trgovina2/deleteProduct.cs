@@ -86,5 +86,27 @@ namespace Trgovina2
                 });
             }
         }
+
+        public int labelMaxWidth
+        {
+            set
+            {
+                foreach (Control c in Controls)
+                {
+                    if (c is Label) c.MaximumSize = new Size(value, 0);
+                }
+            }
+        }
+
+        public bool labelAutoSize
+        {
+            set
+            {
+                foreach (Control c in Controls)
+                {
+                    if (c is Label) c.AutoSize = value;
+                }
+            }
+        }
     }
 }

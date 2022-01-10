@@ -65,16 +65,14 @@ namespace Trgovina2
         public bool addProduct(proizvod p)
         {
             OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\login.accdb");
-            //if (checkIfExists(p) == 1) return upgradeQuantity(p);
-            //if (checkIfExists(p) == 0) return false;
+            int check = checkIfExists(p);
+            if (check == 1) return upgradeQuantity(p);
+            if (check == 0) return false;
             try
             {
                 con.Open();
                 OleDbCommand cmd = new OleDbCommand("insert into proizvodi ([Naziv],[Kategorija],[Kolicina],[Kod],[Cijena],[Rok_trajanja],[Datum_nabave]) values('" +
                    p.name + "','" + p.cat + "'," + p.quant.ToString() + ",'" + p.code + "'," + p.price + "," + p.exp.ToString("#d/M/yyyy#") + "," + p.date.ToString("#d/M/yyyy#")+")", con);
-                //Console.WriteLine(p.name);
-                 //OleDbCommand cmd = new OleDbCommand("insert into proizvodi ([Naziv]) values('" +
-                   // p.name + "')", con);
                 int inserted = cmd.ExecuteNonQuery();
                 Console.WriteLine("ubaceno redaka " + inserted);
                 con.Close();
@@ -93,10 +91,7 @@ namespace Trgovina2
             try
             {
                 con.Open();
-                /*  OleDbDataAdapter sda = new OleDbDataAdapter("select count(*) from proizvodi where Naziv = '" + p.name + "' and Kod = '" + p.code + "' and Rok_trajanja = " 
-                      + p.exp.ToString("dd-MMM-yy") + " and Datum_nabave = " + p.date.ToString("dd-MMM-yy"), con);*/
-                Console.WriteLine(p.exp.ToString("dd-MMM-yy"));
-                OleDbDataAdapter sda = new OleDbDataAdapter("select count(*) from proizvodi where Naziv = '" + p.name + "' and Kod = '" + p.code + "' and Rok_trajanja = "+p.exp.ToString("dd-MM-yy"), con);
+                OleDbDataAdapter sda = new OleDbDataAdapter("select count(*) from proizvodi where Naziv = '" + p.name + "' and Kod = '" + p.code + "' and Rok_trajanja = "+p.exp.ToString("#d/M/yyyy#"), con);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
                 if (dt.Rows[0][0].ToString() == "1")
@@ -127,17 +122,19 @@ namespace Trgovina2
             {
                 con.Open();
                 OleDbDataAdapter sda = new OleDbDataAdapter("select Kolicina from proizvodi where Naziv = '" + p.name + "' and Kod = '" + p.code + "' and Rok_trajanja = "
-                    + p.exp.ToString("dd-MM-yy") + "Datum_nabave = " + p.date.ToString("dd-MM-yy"), con);
+                    + p.exp.ToString("#d/M/yyyy#") + "Datum_nabave = " + p.date.ToString("#d/M/yyyy#"), con);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
-                Console.WriteLine(dt.Rows[0][0]);
+                Console.WriteLine(dt.Rows[0]["Kolicina"]);
                 if(dt.Rows.Count > 1)
                 {
                     con.Close();
                     return false;
                 }
-                OleDbCommand cmd = new OleDbCommand("update proizvodi set Kolicina = " + p.quant + dt.Rows[0][0] + "where Naziv =  '" + p.name + "' and Kod = '" + p.code + "' and Rok_trajanja = "
-                    + p.exp.ToString("dd-MM-yy") + "Datum_nabave = " + p.date.ToString("dd-MM-yy"), con);
+                int newQuant = p.quant + int.Parse(dt.Rows[0]["Kolicina"].ToString());
+
+                OleDbCommand cmd = new OleDbCommand("update proizvodi set Kolicina = " + newQuant + "where Naziv =  '" + p.name + "' and Kod = '" + p.code + "' and Rok_trajanja = "
+                    + p.exp.ToString("#d/M/yyyy#") + "Datum_nabave = " + p.date.ToString("#d/M/yyyy#"), con);
                 int updated = cmd.ExecuteNonQuery();
                 con.Close();
                 return true;
@@ -175,6 +172,41 @@ namespace Trgovina2
                 return 0;
             }
 
+        }
+
+        public List<proizvod> allProducts()
+        {
+            List<proizvod> ret = new List<proizvod>();
+            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\login.accdb");
+            try
+            {
+                con.Open();
+                OleDbDataAdapter sda = new OleDbDataAdapter("select * from proizvodi order by Naziv, Rok_trajanja", con);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                foreach (DataRow r in dt.Rows)
+                {
+                    ret.Add(new proizvod()
+                    {
+                        id = int.Parse(r["ID"].ToString()),
+                        name = r["Naziv"].ToString(),
+                        cat = r["Kategorija"].ToString(),
+                        price = double.Parse(r["Cijena"].ToString()),
+                        quant = int.Parse(r["Kolicina"].ToString()),
+                        code = r["Kod"].ToString(),
+                        exp = DateTime.Parse(r["Rok_trajanja"].ToString()),
+                        date = DateTime.Parse(r["Datum_nabave"].ToString())
+                    });
+                }
+                con.Close();
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return ret;
+            }
+            return ret;
         }
     }
 }
