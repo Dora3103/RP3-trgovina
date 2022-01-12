@@ -145,19 +145,29 @@ namespace Trgovina2
                 MessageBox.Show("Error: " + ex);
             }
 
-            makeBill();
+            BillFinalControl control = new BillFinalControl();
+            double total = makeBill(control);
+
+            control.populateLabels(total.ToString("0.##"), comboBox1.Text.Equals("") ? "Gotovina" : comboBox1.Text);
+            this.Hide();
+            Form f = new Form();
+            f.BackColor = SystemColors.Window;
+            f.Text = "Bill";
+            f.Height = 435;
+            f.Width = 314;
+            f.Controls.Add(control);
+            f.ShowDialog();
         }
 
-        private void makeBill()
-        {
-            BillFinalControl control = new BillFinalControl();
+        private double makeBill(BillFinalControl control)
+        {            
             string[] row = new string[4];
+            double total = 0;
 
             foreach (BillControl item in flowLayoutPanel1.Controls)
             {
                 row[0] = item.naziv;
-                row[1] = item.kolicina;
-                row[2] = item.cijena.ToString();
+                row[1] = item.kolicina;                
 
                 double afterDiscount = item.cijena;
 
@@ -172,11 +182,7 @@ namespace Trgovina2
                          "FROM popust INNER JOIN proizvodi ON popust.proizvodId = proizvodi.ID " +
                          "WHERE proizvodi.Kod='" + item.kod + "' " +
                          "AND popust.datumOd<=Date() " +
-                         "AND popust.datumDo>=Date()", con);
-                  /*  OleDbDataAdapter sda = new OleDbDataAdapter("" +
-                         "SELECT * " +
-                         "FROM popust INNER JOIN proizvodi ON popust.proizvodId = proizvodi.ID " +
-                         "WHERE proizvodi.Kod='" + item.kod + "'", con);*/
+                         "AND popust.datumDo>=Date()", con);                  
 
                     DataTable dt = new DataTable();
                     sda.Fill(dt);
@@ -184,7 +190,7 @@ namespace Trgovina2
                     if (dt.Rows.Count == 1)
                     {
                         double percentage = Convert.ToDouble(dt.Rows[0]["postotakPopusta"]);
-                        afterDiscount -= afterDiscount * percentage;
+                        afterDiscount -= afterDiscount * percentage / 100;
                     }
                 }
 
@@ -192,18 +198,15 @@ namespace Trgovina2
                 {
                     MessageBox.Show("Error: " + ex);
                 }
-                row[3] = afterDiscount.ToString("0.##");
+
+                double productTotal = afterDiscount * Convert.ToDouble(item.kolicina);
+                total+= productTotal;
+                row[2] = afterDiscount.ToString("0.##");
+                row[3] = productTotal.ToString("0.##");
                 control.populateTable(row);
-                control.populateLabels("100", comboBox1.Text.Equals("") ? "Gotovina" : comboBox1.Text);
-                this.Hide();
-                Form f = new Form();               
-                f.BackColor = SystemColors.Window;
-                f.Text = "Bill";
-                f.Height = 435;
-                f.Width = 314;                
-                f.Controls.Add(control);
-                f.ShowDialog();
             }
+
+            return total;
         }
     }
 }
