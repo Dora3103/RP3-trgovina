@@ -72,5 +72,11 @@ namespace Trgovina2
             ListOfProducts f = new ListOfProducts();
             f.Show();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            AddBill p = new AddBill();
+            p.ShowDialog();
+        }
     }
 }

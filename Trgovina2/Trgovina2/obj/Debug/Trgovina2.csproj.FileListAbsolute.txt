@@ -13,3 +13,23 @@ C:\Users\avedo\source\repos\Trgovina2\Trgovina2\obj\Debug\Trgovina2.Worker.resou
 C:\Users\avedo\source\repos\Trgovina2\Trgovina2\obj\Debug\Trgovina2.Register.resources
 C:\Users\avedo\source\repos\Trgovina2\Trgovina2\obj\Debug\Trgovina2.Newproduct.resources
 C:\Users\avedo\source\repos\Trgovina2\Trgovina2\obj\Debug\Trgovina2.Removeproduct.resources
+C:\Users\matij\OneDrive\Radna površina\faks\3. semestar\racunarski praktikum 3\RP3-trgovina\Trgovina2\Trgovina2\bin\Debug\login.accdb
+C:\Users\matij\OneDrive\Radna površina\faks\3. semestar\racunarski praktikum 3\RP3-trgovina\Trgovina2\Trgovina2\bin\Debug\Trgovina2.exe.config
+C:\Users\matij\OneDrive\Radna površina\faks\3. semestar\racunarski praktikum 3\RP3-trgovina\Trgovina2\Trgovina2\bin\Debug\Trgovina2.exe
+C:\Users\matij\OneDrive\Radna površina\faks\3. semestar\racunarski praktikum 3\RP3-trgovina\Trgovina2\Trgovina2\bin\Debug\Trgovina2.pdb
+C:\Users\matij\OneDrive\Radna površina\faks\3. semestar\racunarski praktikum 3\RP3-trgovina\Trgovina2\Trgovina2\obj\Debug\Trgovina2.csproj.AssemblyReference.cache
+C:\Users\matij\OneDrive\Radna površina\faks\3. semestar\racunarski praktikum 3\RP3-trgovina\Trgovina2\Trgovina2\obj\Debug\Trgovina2.csproj.SuggestedBindingRedirects.cache
+C:\Users\matij\OneDrive\Radna površina\faks\3. semestar\racunarski praktikum 3\RP3-trgovina\Trgovina2\Trgovina2\obj\Debug\Trgovina2.addProduct.resources
+C:\Users\matij\OneDrive\Radna površina\faks\3. semestar\racunarski praktikum 3\RP3-trgovina\Trgovina2\Trgovina2\obj\Debug\Trgovina2.deleteProduct.resources
+C:\Users\matij\OneDrive\Radna površina\faks\3. semestar\racunarski praktikum 3\RP3-trgovina\Trgovina2\Trgovina2\obj\Debug\Trgovina2.Form1.resources
+C:\Users\matij\OneDrive\Radna površina\faks\3. semestar\racunarski praktikum 3\RP3-trgovina\Trgovina2\Trgovina2\obj\Debug\Trgovina2.Worker.resources
+C:\Users\matij\OneDrive\Radna površina\faks\3. semestar\racunarski praktikum 3\RP3-trgovina\Trgovina2\Trgovina2\obj\Debug\Trgovina2.Newproduct.resources
+C:\Users\matij\OneDrive\Radna površina\faks\3. semestar\racunarski praktikum 3\RP3-trgovina\Trgovina2\Trgovina2\obj\Debug\Trgovina2.Register.resources
+C:\Users\matij\OneDrive\Radna površina\faks\3. semestar\racunarski praktikum 3\RP3-trgovina\Trgovina2\Trgovina2\obj\Debug\Trgovina2.Removeproduct.resources
+C:\Users\matij\OneDrive\Radna površina\faks\3. semestar\racunarski praktikum 3\RP3-trgovina\Trgovina2\Trgovina2\obj\Debug\Trgovina2.ListOfProducts.resources
+C:\Users\matij\OneDrive\Radna površina\faks\3. semestar\racunarski praktikum 3\RP3-trgovina\Trgovina2\Trgovina2\obj\Debug\Trgovina2.productControl.resources
+C:\Users\matij\OneDrive\Radna površina\faks\3. semestar\racunarski praktikum 3\RP3-trgovina\Trgovina2\Trgovina2\obj\Debug\Trgovina2.Properties.Resources.resources
+C:\Users\matij\OneDrive\Radna površina\faks\3. semestar\racunarski praktikum 3\RP3-trgovina\Trgovina2\Trgovina2\obj\Debug\Trgovina2.csproj.GenerateResource.cache
+C:\Users\matij\OneDrive\Radna površina\faks\3. semestar\racunarski praktikum 3\RP3-trgovina\Trgovina2\Trgovina2\obj\Debug\Trgovina2.csproj.CoreCompileInputs.cache
+C:\Users\matij\OneDrive\Radna površina\faks\3. semestar\racunarski praktikum 3\RP3-trgovina\Trgovina2\Trgovina2\obj\Debug\Trgovina2.exe
+C:\Users\matij\OneDrive\Radna površina\faks\3. semestar\racunarski praktikum 3\RP3-trgovina\Trgovina2\Trgovina2\obj\Debug\Trgovina2.pdb
