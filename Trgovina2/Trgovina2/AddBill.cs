@@ -17,6 +17,7 @@ namespace Trgovina2
         {
             InitializeComponent();
             fetchData();
+            comboBox1.SelectedIndex = 0;
         }
 
         public void fetchData()
@@ -165,32 +166,43 @@ namespace Trgovina2
                 try
                 {
                     con.Open();
-
+                    var dateNow = DateTime.Now.Date;
                     OleDbDataAdapter sda = new OleDbDataAdapter("" +
-                        "SELECT postotakPopusta " +
-                        "FROM popust INNER JOIN proizvodi ON popust.proizvodId = proizvodi.id " +
-                        "WHERE proizvodi.Kod='" + item.kod + "' " +
-                        "AND popust.datumOd<=CURRENT_DATE " +
-                        "AND popust.datumDo>=CURRENT_DATE", con);
+                         "SELECT * " +
+                         "FROM popust INNER JOIN proizvodi ON popust.proizvodId = proizvodi.ID " +
+                         "WHERE proizvodi.Kod='" + item.kod + "' " +
+                         "AND popust.datumOd<=Date() " +
+                         "AND popust.datumDo>=Date()", con);
+                  /*  OleDbDataAdapter sda = new OleDbDataAdapter("" +
+                         "SELECT * " +
+                         "FROM popust INNER JOIN proizvodi ON popust.proizvodId = proizvodi.ID " +
+                         "WHERE proizvodi.Kod='" + item.kod + "'", con);*/
 
                     DataTable dt = new DataTable();
                     sda.Fill(dt);
 
                     if (dt.Rows.Count == 1)
                     {
-                        afterDiscount = (double)dt.Rows[0]["postotakPopusta"];
+                        double percentage = Convert.ToDouble(dt.Rows[0]["postotakPopusta"]);
+                        afterDiscount -= afterDiscount * percentage;
                     }
-
-                    row[3] = afterDiscount.ToString();
                 }
 
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error: " + ex);
                 }
-
                 row[3] = afterDiscount.ToString("0.##");
                 control.populateTable(row);
+                control.populateLabels("100", comboBox1.Text.Equals("") ? "Gotovina" : comboBox1.Text);
+                this.Hide();
+                Form f = new Form();               
+                f.BackColor = SystemColors.Window;
+                f.Text = "Bill";
+                f.Height = 435;
+                f.Width = 314;                
+                f.Controls.Add(control);
+                f.ShowDialog();
             }
         }
     }

@@ -29,10 +29,6 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Naziv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Kol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cijena = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Iznos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,6 +38,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.labelTotal = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.Naziv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Kol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cijena = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Iznos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,7 +58,7 @@
             this.Cijena,
             this.Iznos});
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 88);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 88);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -67,41 +67,8 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dataGridView1.ShowEditingIcon = false;
-            this.dataGridView1.Size = new System.Drawing.Size(289, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(318, 150);
             this.dataGridView1.TabIndex = 13;
-            // 
-            // Naziv
-            // 
-            this.Naziv.HeaderText = "Naziv";
-            this.Naziv.MaxInputLength = 32766;
-            this.Naziv.MinimumWidth = 6;
-            this.Naziv.Name = "Naziv";
-            this.Naziv.ReadOnly = true;
-            this.Naziv.Width = 125;
-            // 
-            // Kol
-            // 
-            this.Kol.HeaderText = "Kol";
-            this.Kol.MinimumWidth = 6;
-            this.Kol.Name = "Kol";
-            this.Kol.ReadOnly = true;
-            this.Kol.Width = 50;
-            // 
-            // Cijena
-            // 
-            this.Cijena.HeaderText = "Cijena";
-            this.Cijena.MinimumWidth = 6;
-            this.Cijena.Name = "Cijena";
-            this.Cijena.ReadOnly = true;
-            this.Cijena.Width = 70;
-            // 
-            // Iznos
-            // 
-            this.Iznos.HeaderText = "Iznos";
-            this.Iznos.MinimumWidth = 6;
-            this.Iznos.Name = "Iznos";
-            this.Iznos.ReadOnly = true;
-            this.Iznos.Width = 70;
             // 
             // label6
             // 
@@ -116,7 +83,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(257, 56);
+            this.label2.Location = new System.Drawing.Point(229, 56);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 16);
             this.label2.TabIndex = 11;
@@ -134,7 +101,7 @@
             // labelDate
             // 
             this.labelDate.AutoSize = true;
-            this.labelDate.Location = new System.Drawing.Point(257, 404);
+            this.labelDate.Location = new System.Drawing.Point(183, 404);
             this.labelDate.Name = "labelDate";
             this.labelDate.Size = new System.Drawing.Size(44, 16);
             this.labelDate.TabIndex = 19;
@@ -152,7 +119,7 @@
             // labelType
             // 
             this.labelType.AutoSize = true;
-            this.labelType.Location = new System.Drawing.Point(257, 374);
+            this.labelType.Location = new System.Drawing.Point(229, 374);
             this.labelType.Name = "labelType";
             this.labelType.Size = new System.Drawing.Size(44, 16);
             this.labelType.TabIndex = 17;
@@ -170,7 +137,7 @@
             // labelTotal
             // 
             this.labelTotal.AutoSize = true;
-            this.labelTotal.Location = new System.Drawing.Point(257, 344);
+            this.labelTotal.Location = new System.Drawing.Point(229, 344);
             this.labelTotal.Name = "labelTotal";
             this.labelTotal.Size = new System.Drawing.Size(44, 16);
             this.labelTotal.TabIndex = 15;
@@ -184,6 +151,38 @@
             this.label3.Size = new System.Drawing.Size(71, 16);
             this.label3.TabIndex = 14;
             this.label3.Text = "Ukupno kn";
+            // 
+            // Naziv
+            // 
+            this.Naziv.HeaderText = "Naziv";
+            this.Naziv.MaxInputLength = 32766;
+            this.Naziv.MinimumWidth = 6;
+            this.Naziv.Name = "Naziv";
+            this.Naziv.ReadOnly = true;
+            // 
+            // Kol
+            // 
+            this.Kol.HeaderText = "Kol";
+            this.Kol.MinimumWidth = 6;
+            this.Kol.Name = "Kol";
+            this.Kol.ReadOnly = true;
+            this.Kol.Width = 30;
+            // 
+            // Cijena
+            // 
+            this.Cijena.HeaderText = "Cijena";
+            this.Cijena.MinimumWidth = 6;
+            this.Cijena.Name = "Cijena";
+            this.Cijena.ReadOnly = true;
+            this.Cijena.Width = 60;
+            // 
+            // Iznos
+            // 
+            this.Iznos.HeaderText = "Iznos";
+            this.Iznos.MinimumWidth = 6;
+            this.Iznos.Name = "Iznos";
+            this.Iznos.ReadOnly = true;
+            this.Iznos.Width = 60;
             // 
             // BillFinalControl
             // 
@@ -201,7 +200,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "BillFinalControl";
-            this.Size = new System.Drawing.Size(314, 435);
+            this.Size = new System.Drawing.Size(324, 435);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -211,10 +210,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Naziv;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Kol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cijena;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Iznos;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -224,5 +219,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label labelTotal;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Naziv;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Kol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cijena;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Iznos;
     }
 }

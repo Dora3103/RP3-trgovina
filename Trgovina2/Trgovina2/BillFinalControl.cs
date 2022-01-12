@@ -23,5 +23,11 @@ namespace Trgovina2
         {
             dataGridView1.Rows.Add(row);
         }
+
+        public void populateLabels(string ammount, string type)
+        {
+            labelTotal.Text = ammount;
+            labelType.Text = type;
+        }
     }
 }
