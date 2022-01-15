@@ -67,10 +67,10 @@ namespace Trgovina2
             set { label4.Text = value.ToString(); }
         }
 
-        /*public void removeButton()
+        public bool detButton
         {
-            Controls.Remove(deleteButton);
-        }*/
+            set { Controls.Remove(detailButton); }
+        }
 
 
         public int textSize
@@ -103,6 +103,19 @@ namespace Trgovina2
                 {
                     if (c is Label) c.AutoSize = value;
                 }
+            }
+        }
+
+        public event EventHandler<proizvod> detail;
+
+        private void detailButton_Click(object sender, EventArgs e)
+        {
+            if(detail != null)
+            {
+                detail(this, new proizvod()
+                {
+
+                });
             }
         }
     }

@@ -34,7 +34,7 @@ namespace Trgovina2
 
         public string cat
         {
-            get { return catTextBox.Text; }
+            get { return catBox.Text; }
         }
 
         public int quant

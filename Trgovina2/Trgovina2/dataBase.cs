@@ -208,5 +208,116 @@ namespace Trgovina2
             }
             return ret;
         }
+
+        public List<discount> getDiscountsByProuctId(int id)
+        {
+            List<discount> ret = new List<discount>();
+            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\login.accdb");
+            try
+            {
+                con.Open();
+                OleDbDataAdapter sda = new OleDbDataAdapter("select * from popust where proizvodId = " +id, con);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                foreach (DataRow r in dt.Rows)
+                {
+                    ret.Add(new discount()
+                    {
+                        id = int.Parse(r["ID"].ToString()),
+                        productId = int.Parse(r["proizvodId"].ToString()),
+                        percent = int.Parse(r["postotakPopusta"].ToString()),
+                        from = DateTime.Parse(r["datumOd"].ToString()),
+                        to = DateTime.Parse(r["datumDo"].ToString())
+                    });
+                }
+                con.Close();
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return ret;
+            }
+
+
+            return ret;
+        }
+
+        public bool addDiscount(discount d)
+        {
+            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\login.accdb");
+            try
+            {
+                con.Open();
+                OleDbCommand cmd = new OleDbCommand("insert into popust ([proizvodId],[postotakPopusta],[datumOd],[datumDo]) values(" +
+                   d.productId + "," + d.percent + ","  + d.from.ToString("#d/M/yyyy#") + "," + d.to.ToString("#d/M/yyyy#") + ")", con);
+                int inserted = cmd.ExecuteNonQuery();
+                //Console.WriteLine("ubaceno redaka " + inserted);
+                con.Close();
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return false;
+            }
+
+        }
+
+        public bool changeName(int id, string name)
+        {
+            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\login.accdb");
+            try
+            {
+
+                OleDbCommand cmd = new OleDbCommand("update proizvodi set Naziv = '" + name + "' where ID =  " + id, con);
+                int updated = cmd.ExecuteNonQuery();
+                con.Close();
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return false;
+            }
+        }
+
+        public bool changePrice(int id, int price)
+        {
+
+            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\login.accdb");
+            try
+            {
+
+                OleDbCommand cmd = new OleDbCommand("update proizvodi set Cijena = " + price + " where ID =  " + id, con);
+                int updated = cmd.ExecuteNonQuery();
+                con.Close();
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return false;
+            }
+        }
+
+        public bool changeCode(int id, string code)
+        {
+
+            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\login.accdb");
+            try
+            {
+
+                OleDbCommand cmd = new OleDbCommand("update proizvodi set Kod = '" + code + "' where ID =  " + id, con);
+                int updated = cmd.ExecuteNonQuery();
+                con.Close();
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return false;
+            }
+        }
     }
 }

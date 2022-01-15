@@ -35,6 +35,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.detailButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -114,10 +115,23 @@
             this.label7.Text = "Datum nabave";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // detailButton
+            // 
+            this.detailButton.AutoSize = true;
+            this.detailButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.detailButton.Location = new System.Drawing.Point(849, 4);
+            this.detailButton.Name = "detailButton";
+            this.detailButton.Size = new System.Drawing.Size(108, 35);
+            this.detailButton.TabIndex = 8;
+            this.detailButton.Text = "Detalji";
+            this.detailButton.UseVisualStyleBackColor = true;
+            this.detailButton.Click += new System.EventHandler(this.detailButton_Click);
+            // 
             // productControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.detailButton);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -126,7 +140,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
             this.Name = "productControl";
-            this.Size = new System.Drawing.Size(809, 42);
+            this.Size = new System.Drawing.Size(969, 42);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -141,5 +155,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button detailButton;
     }
 }

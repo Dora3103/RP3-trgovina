@@ -38,11 +38,11 @@
             this.dateTextBox = new System.Windows.Forms.TextBox();
             this.quantTextBox = new System.Windows.Forms.TextBox();
             this.expTextBox = new System.Windows.Forms.TextBox();
-            this.catTextBox = new System.Windows.Forms.TextBox();
             this.priceTextBox = new System.Windows.Forms.TextBox();
             this.codeTextBox = new System.Windows.Forms.TextBox();
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.addButton = new System.Windows.Forms.Button();
+            this.catBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -61,7 +61,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label2.Location = new System.Drawing.Point(15, 320);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(153, 25);
+            this.label2.Size = new System.Drawing.Size(122, 20);
             this.label2.TabIndex = 6;
             this.label2.Text = "Datum nabave:";
             // 
@@ -71,7 +71,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label3.Location = new System.Drawing.Point(15, 270);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(129, 25);
+            this.label3.Size = new System.Drawing.Size(103, 20);
             this.label3.TabIndex = 5;
             this.label3.Text = "Rok trajanja:";
             // 
@@ -91,7 +91,7 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label5.Location = new System.Drawing.Point(15, 170);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(111, 25);
+            this.label5.Size = new System.Drawing.Size(89, 20);
             this.label5.TabIndex = 3;
             this.label5.Text = "Kategorija:";
             // 
@@ -101,7 +101,7 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label6.Location = new System.Drawing.Point(15, 120);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(76, 25);
+            this.label6.Size = new System.Drawing.Size(61, 20);
             this.label6.TabIndex = 2;
             this.label6.Text = "Cijena:";
             // 
@@ -111,7 +111,7 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label7.Location = new System.Drawing.Point(15, 70);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(54, 25);
+            this.label7.Size = new System.Drawing.Size(43, 20);
             this.label7.TabIndex = 1;
             this.label7.Text = "Kod:";
             // 
@@ -138,14 +138,6 @@
             this.expTextBox.Name = "expTextBox";
             this.expTextBox.Size = new System.Drawing.Size(285, 23);
             this.expTextBox.TabIndex = 12;
-            // 
-            // catTextBox
-            // 
-            this.catTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.catTextBox.Location = new System.Drawing.Point(192, 172);
-            this.catTextBox.Name = "catTextBox";
-            this.catTextBox.Size = new System.Drawing.Size(285, 23);
-            this.catTextBox.TabIndex = 10;
             // 
             // priceTextBox
             // 
@@ -182,15 +174,34 @@
             this.addButton.UseVisualStyleBackColor = true;
             this.addButton.Click += new System.EventHandler(this.button1_Click);
             // 
+            // catBox
+            // 
+            this.catBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.catBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.catBox.FormattingEnabled = true;
+            this.catBox.Items.AddRange(new object[] {
+            "Voće",
+            "Povrće",
+            "Slatkiši",
+            "Napitak",
+            "Mliječni proizvod",
+            "Žitarice",
+            "Kruh",
+            "Tjestenine"});
+            this.catBox.Location = new System.Drawing.Point(192, 170);
+            this.catBox.Name = "catBox";
+            this.catBox.Size = new System.Drawing.Size(285, 24);
+            this.catBox.TabIndex = 10;
+            // 
             // addProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.catBox);
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.nameTextBox);
             this.Controls.Add(this.codeTextBox);
             this.Controls.Add(this.priceTextBox);
-            this.Controls.Add(this.catTextBox);
             this.Controls.Add(this.expTextBox);
             this.Controls.Add(this.quantTextBox);
             this.Controls.Add(this.dateTextBox);
@@ -220,10 +231,10 @@
         private System.Windows.Forms.TextBox dateTextBox;
         private System.Windows.Forms.TextBox quantTextBox;
         private System.Windows.Forms.TextBox expTextBox;
-        private System.Windows.Forms.TextBox catTextBox;
         private System.Windows.Forms.TextBox priceTextBox;
         private System.Windows.Forms.TextBox codeTextBox;
         private System.Windows.Forms.TextBox nameTextBox;
         private System.Windows.Forms.Button addButton;
+        private System.Windows.Forms.ComboBox catBox;
     }
 }

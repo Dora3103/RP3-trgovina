@@ -25,7 +25,7 @@ namespace Trgovina2
 
             productControl header = new productControl();
             header.Width = productTable.Width;
-            //header.delButton = false;
+            header.detButton = false;
             header.textSize = 12;
             RowStyle temp = productTable.RowStyles[0];
             ColumnStyle temp2 = productTable.ColumnStyles[0];
@@ -54,6 +54,12 @@ namespace Trgovina2
                 productTable.RowStyles.Add(new RowStyle(temp.SizeType, temp.Height));
                 productTable.Controls.Add(prod, 0, productTable.RowCount - 1);
                 productTable.SetColumnSpan(prod, productTable.ColumnCount);
+                prod.detail += (sender, e) =>
+                 {
+                     ProductDetails prodDet = new ProductDetails(p);
+                     prodDet.Show();
+                 };
+
                 productTable.RowCount++;
             }
         }
