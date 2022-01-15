@@ -40,10 +40,7 @@ namespace Trgovina2
                 prod.id = p.id;
                 prod.name = p.name;
                 prod.code = p.code;
-                prod.quant = p.quant;
-                prod.date = p.date;
                 prod.exp = p.exp;
-                prod.cat = p.cat;
                 prod.price = p.price;
                 prod.Width = productTable.Width;
                 //prod.labelMaxWidth = (int)Math.Ceiling(temp2.Width);

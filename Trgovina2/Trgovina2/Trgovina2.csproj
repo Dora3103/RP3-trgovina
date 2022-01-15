@@ -72,6 +72,12 @@
     <Compile Include="AddBill.Designer.cs">
       <DependentUpon>AddBill.cs</DependentUpon>
     </Compile>
+    <Compile Include="addDiscount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addDiscount.Designer.cs">
+      <DependentUpon>addDiscount.cs</DependentUpon>
+    </Compile>
     <Compile Include="addProduct.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -98,6 +104,12 @@
       <DependentUpon>deleteProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="discount.cs" />
+    <Compile Include="discountControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="discountControl.Designer.cs">
+      <DependentUpon>discountControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +174,9 @@
     <EmbeddedResource Include="AddBill.resx">
       <DependentUpon>AddBill.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="addDiscount.resx">
+      <DependentUpon>addDiscount.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="addProduct.resx">
       <DependentUpon>addProduct.cs</DependentUpon>
     </EmbeddedResource>
@@ -173,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="deleteProduct.resx">
       <DependentUpon>deleteProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="discountControl.resx">
+      <DependentUpon>discountControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

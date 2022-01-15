@@ -31,14 +31,66 @@ namespace Trgovina2
             expLabel.Text = p.exp.ToString("d.M.yyyy");
             dateLabel.Text = p.date.ToString("d.M.yyyy");
             db = new dataBase();
+            showDiscounts();
+
+        }
+
+        private void showDiscounts()
+        {
             List<discount> discountList = db.getDiscountsByProuctId(_id);
+            discountControl header = new discountControl();
+            header.Width = discountTable.Width;
+            header.chgButton = false;
+            header.optionCombo = false;
+            header.delButton = false;
+            header.textSize = 10;
+            RowStyle temp = discountTable.RowStyles[0];
+            ColumnStyle temp2 = discountTable.ColumnStyles[0];
+
+            discountTable.RowStyles.Add(new RowStyle(temp.SizeType, temp.Height));
+            discountTable.Controls.Add(header, 0, discountTable.RowCount - 1);
+            discountTable.SetColumnSpan(header, discountTable.ColumnCount);
+            discountTable.RowCount++;
+            foreach (discount d in discountList)
+            {
+                discountControl disc = new discountControl();
+                disc.id = d.id;
+                disc.productId = d.productId;
+                disc.percent = d.percent;
+                disc.from = d.from;
+                disc.to = d.to;
+                //prod.labelMaxWidth = (int)Math.Ceiling(temp2.Width);
+                //prod.labelAutoSize = true;
+
+                temp = discountTable.RowStyles[0];
+
+                discountTable.RowStyles.Add(new RowStyle(temp.SizeType, temp.Height));
+                discountTable.Controls.Add(disc, 0, discountTable.RowCount - 1);
+                discountTable.SetColumnSpan(disc, discountTable.ColumnCount);
+                disc.change += (sender, e) =>
+                {
+                    string option = disc.option;
+                    //db.changeDiscountPercent(e.id, e.percent)
+                };
+
+                disc.delete += (sender, e) =>
+                {
+                    db.deleteDiscount(disc.id);
+                    discountTable.Controls.Remove(disc);
+                };
+
+                discountTable.RowCount++;
+            }
 
         }
 
         private void addDiscButton_Click(object sender, EventArgs e)
         {
 
-            Refresh();
+            addDiscount add = new addDiscount(_id);
+            add.Show();
+
+            
         }
 
         private void changePriceButton_Click(object sender, EventArgs e)
@@ -96,6 +148,11 @@ namespace Trgovina2
                 tb.ReadOnly = true;
                 label2.Focus();
             }
+        }
+
+        private void delButton_Click(object sender, EventArgs e)
+        {
+            db.deleteProduct(_id);
         }
     }
 }

@@ -37,29 +37,13 @@ namespace Trgovina2
         }
 
 
-        public int quant
-        {
-            get { return int.Parse(label5.Text); }
-            set { label5.Text = value.ToString(); }
-        }
-
         public DateTime exp
         {
             get { return DateTime.Parse(label6.Text); }
             set { label6.Text = value.ToString("d.M.yyyy"); }
         }
 
-        public DateTime date
-        {
-            get { return DateTime.Parse(label7.Text); }
-            set { label7.Text = value.ToString("d.M.yyyy"); }
-        }
-
-        public string cat
-        {
-            get { return label3.Text; }
-            set { label3.Text = value; }
-        }
+      
 
         public double price
         {
@@ -69,7 +53,7 @@ namespace Trgovina2
 
         public bool detButton
         {
-            set { Controls.Remove(detailButton); }
+            set { detailButton.Visible = value; }
         }
 
 

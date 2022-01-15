@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Trgovina2
 {
-    internal class discount
+    public class discount
     {
         public int id;
         public int productId;
-        public int percent;
+        public double percent;
         public DateTime from;
         public DateTime to;
 

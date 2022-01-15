@@ -44,13 +44,13 @@ namespace Trgovina2
             return ret;
         }
 
-        public void deleteProduct(proizvod p)
+        public void deleteProduct(int id)
         {
             OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\login.accdb");
             try
             {
                 con.Open();
-                OleDbCommand cmd = new OleDbCommand("delete from proizvodi where ID = " + p.id.ToString(), con);
+                OleDbCommand cmd = new OleDbCommand("delete from proizvodi where ID = " + id, con);
                 int deleted = cmd.ExecuteNonQuery();
                 //Console.WriteLine("broj obrisanih redova " + deleted.ToString());
                 con.Close();
@@ -310,6 +310,25 @@ namespace Trgovina2
 
                 OleDbCommand cmd = new OleDbCommand("update proizvodi set Kod = '" + code + "' where ID =  " + id, con);
                 int updated = cmd.ExecuteNonQuery();
+                con.Close();
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return false;
+            }
+        }
+
+        public bool deleteDiscount(int id)
+        {
+            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\login.accdb");
+            try
+            {
+                con.Open();
+                OleDbCommand cmd = new OleDbCommand("delete from popust where ID = " + id, con);
+                int deleted = cmd.ExecuteNonQuery();
+                //Console.WriteLine("broj obrisanih redova " + deleted.ToString());
                 con.Close();
                 return true;
             }

@@ -46,6 +46,8 @@
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.codeTextBox = new System.Windows.Forms.TextBox();
             this.priceTextBox = new System.Windows.Forms.TextBox();
+            this.discountTable = new System.Windows.Forms.TableLayoutPanel();
+            this.delButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label2
@@ -151,10 +153,10 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label8.Location = new System.Drawing.Point(11, 440);
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.label8.Location = new System.Drawing.Point(10, 440);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(77, 25);
+            this.label8.Size = new System.Drawing.Size(118, 36);
             this.label8.TabIndex = 13;
             this.label8.Text = "Popusti";
             // 
@@ -172,7 +174,7 @@
             // changeNameButton
             // 
             this.changeNameButton.AutoSize = true;
-            this.changeNameButton.Location = new System.Drawing.Point(265, 20);
+            this.changeNameButton.Location = new System.Drawing.Point(327, 20);
             this.changeNameButton.Name = "changeNameButton";
             this.changeNameButton.Size = new System.Drawing.Size(94, 33);
             this.changeNameButton.TabIndex = 15;
@@ -206,11 +208,11 @@
             // 
             this.nameTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.nameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.nameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.nameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.nameTextBox.Location = new System.Drawing.Point(10, 20);
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.ReadOnly = true;
-            this.nameTextBox.Size = new System.Drawing.Size(249, 23);
+            this.nameTextBox.Size = new System.Drawing.Size(292, 27);
             this.nameTextBox.TabIndex = 18;
             this.nameTextBox.Text = "Naziv";
             this.nameTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.nameTextBox_KeyUp);
@@ -241,12 +243,43 @@
             this.priceTextBox.Text = "Cijena";
             this.priceTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.priceTextBox_KeyUp);
             // 
+            // discountTable
+            // 
+            this.discountTable.AutoScroll = true;
+            this.discountTable.ColumnCount = 6;
+            this.discountTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.discountTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.discountTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.discountTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.discountTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.discountTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.discountTable.Location = new System.Drawing.Point(10, 485);
+            this.discountTable.Name = "discountTable";
+            this.discountTable.RowCount = 1;
+            this.discountTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.discountTable.Size = new System.Drawing.Size(831, 188);
+            this.discountTable.TabIndex = 21;
+            // 
+            // delButton
+            // 
+            this.delButton.AutoSize = true;
+            this.delButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.delButton.Location = new System.Drawing.Point(730, 22);
+            this.delButton.Name = "delButton";
+            this.delButton.Size = new System.Drawing.Size(94, 33);
+            this.delButton.TabIndex = 22;
+            this.delButton.Text = "Obriši";
+            this.delButton.UseVisualStyleBackColor = true;
+            this.delButton.Click += new System.EventHandler(this.delButton_Click);
+            // 
             // ProductDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(853, 614);
+            this.ClientSize = new System.Drawing.Size(853, 685);
+            this.Controls.Add(this.delButton);
+            this.Controls.Add(this.discountTable);
             this.Controls.Add(this.priceTextBox);
             this.Controls.Add(this.codeTextBox);
             this.Controls.Add(this.nameTextBox);
@@ -291,5 +324,7 @@
         private System.Windows.Forms.TextBox nameTextBox;
         private System.Windows.Forms.TextBox codeTextBox;
         private System.Windows.Forms.TextBox priceTextBox;
+        private System.Windows.Forms.TableLayoutPanel discountTable;
+        private System.Windows.Forms.Button delButton;
     }
 }
