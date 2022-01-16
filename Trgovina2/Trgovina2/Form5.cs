@@ -77,7 +77,7 @@ namespace Trgovina2
             if (i == -1)
                 MessageBox.Show("Trenutno je manje od 10 komada proizvoda " + p.name + "!");
             if(i == -2)
-                MessageBox.Show("Više nema proizvoda " + p.name + "!");
+                MessageBox.Show("Više nema proizvoda " + p.name + " za prodaju!");
 
 
         }

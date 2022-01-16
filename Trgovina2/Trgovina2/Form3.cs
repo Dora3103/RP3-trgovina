@@ -21,7 +21,11 @@ namespace Trgovina2
         {
             dataBase db = new dataBase();
             if (db.addProduct(e))
+            {
                 MessageBox.Show("Proizvod dodan!");
+                Close();
+            }
+                
             else
                 MessageBox.Show("Dogodila se greška!");
         }

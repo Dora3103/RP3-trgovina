@@ -44,24 +44,19 @@ namespace Trgovina2
 
         public DateTime exp
         {
-            get { return DateTime.Parse(expTextBox.Text); }
+            get { return expDateTimePicker.Value; }
         }
 
         public DateTime date
         {
-            get { return DateTime.Parse(dateTextBox.Text); }
+            get { return dateDateTimePicker.Value; }
+              
         }
 
         public event EventHandler<proizvod> dodaj;
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (ValidateChildren(ValidationConstraints.Enabled))
-            {
-                Console.WriteLine("tu sam");
-                MessageBox.Show(nameTextBox.Text, "Demo App - Message!");
-                return;
-            }
             if ( dodaj != null)
             {
                 dodaj(this, new proizvod

@@ -31,7 +31,6 @@ namespace Trgovina2
         {
             this.label1 = new System.Windows.Forms.Label();
             this.dpTable = new System.Windows.Forms.TableLayoutPanel();
-            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -58,18 +57,8 @@ namespace Trgovina2
             this.dpTable.Name = "dpTable";
             this.dpTable.RowCount = 1;
             this.dpTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.dpTable.Size = new System.Drawing.Size(749, 533);
+            this.dpTable.Size = new System.Drawing.Size(891, 533);
             this.dpTable.TabIndex = 2;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label6.Location = new System.Drawing.Point(825, 13);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(260, 25);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "Odaberi proizvod za brisanje";
             // 
             // Removeproduct
             // 
@@ -77,7 +66,6 @@ namespace Trgovina2
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1286, 598);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.dpTable);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -92,6 +80,5 @@ namespace Trgovina2
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel dpTable;
-        private System.Windows.Forms.Label label6;
     }
 }

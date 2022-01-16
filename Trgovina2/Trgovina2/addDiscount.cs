@@ -26,8 +26,8 @@ namespace Trgovina2
             {
                 productId = productId,
                 percent = (double)numericUpDown1.Value,
-                from = DateTime.Parse(fromTextBox.Text),
-                to = DateTime.Parse(toTextBox.Text)
+                from = fromDateTimePicker.Value,
+                to = toDateTimePicker.Value
             };
             db.addDiscount(d);
             this.Close();

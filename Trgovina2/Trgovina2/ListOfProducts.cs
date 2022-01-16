@@ -54,7 +54,7 @@ namespace Trgovina2
                 prod.detail += (sender, e) =>
                  {
                      ProductDetails prodDet = new ProductDetails(p);
-                     prodDet.Show();
+                     prodDet.ShowDialog();
                  };
 
                 productTable.RowCount++;
