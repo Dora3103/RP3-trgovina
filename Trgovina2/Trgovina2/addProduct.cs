@@ -56,10 +56,17 @@ namespace Trgovina2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if( dodaj != null)
+            if (ValidateChildren(ValidationConstraints.Enabled))
+            {
+                Console.WriteLine("tu sam");
+                MessageBox.Show(nameTextBox.Text, "Demo App - Message!");
+                return;
+            }
+            if ( dodaj != null)
             {
                 dodaj(this, new proizvod
                 {
+                    
                     name = name,
                     code = code,
                     price = price,
@@ -71,5 +78,6 @@ namespace Trgovina2
                 });
             }
         }
+
     }
 }

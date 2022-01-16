@@ -162,10 +162,11 @@
             // 
             // addDiscButton
             // 
+            this.addDiscButton.AutoSize = true;
             this.addDiscButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.addDiscButton.Location = new System.Drawing.Point(136, 440);
             this.addDiscButton.Name = "addDiscButton";
-            this.addDiscButton.Size = new System.Drawing.Size(123, 25);
+            this.addDiscButton.Size = new System.Drawing.Size(128, 34);
             this.addDiscButton.TabIndex = 14;
             this.addDiscButton.Text = "Dodaj popust";
             this.addDiscButton.UseVisualStyleBackColor = true;
@@ -248,16 +249,16 @@
             this.discountTable.AutoScroll = true;
             this.discountTable.ColumnCount = 6;
             this.discountTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.discountTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.discountTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.discountTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.discountTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.discountTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.discountTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66666F));
+            this.discountTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66666F));
+            this.discountTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66666F));
+            this.discountTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66666F));
+            this.discountTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66666F));
             this.discountTable.Location = new System.Drawing.Point(10, 485);
             this.discountTable.Name = "discountTable";
             this.discountTable.RowCount = 1;
-            this.discountTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.discountTable.Size = new System.Drawing.Size(831, 188);
+            this.discountTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.discountTable.Size = new System.Drawing.Size(831, 239);
             this.discountTable.TabIndex = 21;
             // 
             // delButton
@@ -277,7 +278,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(853, 685);
+            this.ClientSize = new System.Drawing.Size(853, 736);
             this.Controls.Add(this.delButton);
             this.Controls.Add(this.discountTable);
             this.Controls.Add(this.priceTextBox);

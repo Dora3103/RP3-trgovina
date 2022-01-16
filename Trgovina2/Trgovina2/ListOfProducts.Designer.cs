@@ -43,13 +43,10 @@
             this.productTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.productTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.productTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.productTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.productTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.productTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.productTable.Location = new System.Drawing.Point(12, 12);
             this.productTable.Name = "productTable";
             this.productTable.RowCount = 1;
-            this.productTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.productTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.productTable.Size = new System.Drawing.Size(1337, 686);
             this.productTable.TabIndex = 0;
             // 
@@ -61,7 +58,7 @@
             this.ClientSize = new System.Drawing.Size(1361, 710);
             this.Controls.Add(this.productTable);
             this.Name = "ListOfProducts";
-            this.Text = "Form6";
+            this.Text = "ListOfProducts";
             this.ResumeLayout(false);
 
         }

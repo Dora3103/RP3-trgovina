@@ -338,5 +338,36 @@ namespace Trgovina2
                 return false;
             }
         }
+
+        public discount getNewestDiscount(int productId)
+        {
+            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\login.accdb");
+            discount ret = new discount();
+            try
+            {
+                con.Open();
+                OleDbDataAdapter sda = new OleDbDataAdapter("select top 1 * from popust where proizvodId = " + productId + " order by ID desc", con);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                foreach (DataRow r in dt.Rows)
+                {
+                    ret.id = int.Parse(r["ID"].ToString());
+                    ret.productId = int.Parse(r["proizvodId"].ToString());
+                    ret.percent = int.Parse(r["postotakPopusta"].ToString());
+                    ret.from = DateTime.Parse(r["datumOd"].ToString());
+                    ret.to = DateTime.Parse(r["datumDo"].ToString());
+                }
+                con.Close();
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return ret;
+            }
+
+
+            return ret;
+        }
     }
 }

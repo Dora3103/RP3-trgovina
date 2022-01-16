@@ -72,7 +72,7 @@ namespace Trgovina2
         private void delete(proizvod p)
         {
             dataBase db = new dataBase();
-            db.deleteProduct(p);
+            db.deleteProduct(p.id);
             int i = db.checkQuantity(p.name);
             if (i == -1)
                 MessageBox.Show("Trenutno je manje od 10 komada proizvoda " + p.name + "!");

@@ -88,9 +88,36 @@ namespace Trgovina2
         {
 
             addDiscount add = new addDiscount(_id);
-            add.Show();
+            //add.Show();
+            add.ShowDialog();
+            discount d = db.getNewestDiscount(_id);
+            discountControl disc = new discountControl();
+            disc.id = d.id;
+            disc.productId = d.productId;
+            disc.percent = d.percent;
+            disc.from = d.from;
+            disc.to = d.to;
+            //prod.labelMaxWidth = (int)Math.Ceiling(temp2.Width);
+            //prod.labelAutoSize = true;
 
-            
+            RowStyle temp = discountTable.RowStyles[0];
+
+            discountTable.RowStyles.Add(new RowStyle(temp.SizeType, temp.Height));
+            discountTable.Controls.Add(disc, 0, discountTable.RowCount - 1);
+            discountTable.SetColumnSpan(disc, discountTable.ColumnCount);
+            disc.change += (sender1, e1) =>
+            {
+                string option = disc.option;
+                //db.changeDiscountPercent(e.id, e.percent)
+            };
+
+            disc.delete += (sender1, e1) =>
+            {
+                db.deleteDiscount(disc.id);
+                discountTable.Controls.Remove(disc);
+            };
+
+            discountTable.RowCount++;
         }
 
         private void changePriceButton_Click(object sender, EventArgs e)
@@ -118,7 +145,7 @@ namespace Trgovina2
         {
             if (e.KeyCode == Keys.Enter)    
             {
-                Console.WriteLine("tu sam");
+               // Console.WriteLine("tu sam");
                 TextBox tb = (TextBox)sender;
                 db.changeName(_id, tb.Text);
                 tb.ReadOnly = true;
@@ -153,6 +180,7 @@ namespace Trgovina2
         private void delButton_Click(object sender, EventArgs e)
         {
             db.deleteProduct(_id);
+            this.Close();
         }
     }
 }

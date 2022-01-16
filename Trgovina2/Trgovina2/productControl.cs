@@ -98,6 +98,7 @@ namespace Trgovina2
             {
                 detail(this, new proizvod()
                 {
+                    id = _id,
 
                 });
             }
