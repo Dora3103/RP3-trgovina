@@ -110,6 +110,12 @@
     <Compile Include="discountControl.Designer.cs">
       <DependentUpon>discountControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="ExpiredProducts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExpiredProducts.Designer.cs">
+      <DependentUpon>ExpiredProducts.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,6 +177,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="proizvod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShowNotifications.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowNotifications.Designer.cs">
+      <DependentUpon>ShowNotifications.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddBill.resx">
       <DependentUpon>AddBill.cs</DependentUpon>
     </EmbeddedResource>
@@ -191,6 +203,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="discountControl.resx">
       <DependentUpon>discountControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExpiredProducts.resx">
+      <DependentUpon>ExpiredProducts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -225,6 +240,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ShowNotifications.resx">
+      <DependentUpon>ShowNotifications.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="loginDataSet.xsc">
       <DependentUpon>loginDataSet.xsd</DependentUpon>
     </None>

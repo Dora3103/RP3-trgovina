@@ -78,5 +78,11 @@ namespace Trgovina2
             AddBill p = new AddBill();
             p.ShowDialog();
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            ShowNotifications n = new ShowNotifications();
+            n.ShowDialog();
+        }
     }
 }
