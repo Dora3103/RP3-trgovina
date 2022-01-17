@@ -42,5 +42,11 @@ namespace Trgovina2
             get => _cijena;
             set { _cijena = value; }
         }
+
+        public string pdv
+        {
+            get { return textBox4.Text; }
+            set { textBox4.Text = value; }
+        }
     }
 }

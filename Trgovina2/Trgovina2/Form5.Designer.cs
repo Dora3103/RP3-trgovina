@@ -37,9 +37,10 @@ namespace Trgovina2
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.label1.Location = new System.Drawing.Point(12, 14);
+            this.label1.Location = new System.Drawing.Point(9, 11);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(324, 24);
+            this.label1.Size = new System.Drawing.Size(262, 18);
             this.label1.TabIndex = 1;
             this.label1.Text = "Proizvodi kojima je istekao rok trajanja";
             // 
@@ -52,23 +53,22 @@ namespace Trgovina2
             this.dpTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.dpTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.dpTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.dpTable.Location = new System.Drawing.Point(16, 54);
-            this.dpTable.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dpTable.Location = new System.Drawing.Point(12, 44);
+            this.dpTable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dpTable.Name = "dpTable";
             this.dpTable.RowCount = 1;
             this.dpTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.dpTable.Size = new System.Drawing.Size(891, 533);
+            this.dpTable.Size = new System.Drawing.Size(668, 433);
             this.dpTable.TabIndex = 2;
             // 
             // Removeproduct
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(1286, 598);
+            this.ClientSize = new System.Drawing.Size(717, 486);
             this.Controls.Add(this.dpTable);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Removeproduct";
             this.Text = "Izbriši proizvod";
             this.ResumeLayout(false);

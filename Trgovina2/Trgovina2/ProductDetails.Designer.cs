@@ -54,9 +54,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label2.Location = new System.Drawing.Point(10, 80);
+            this.label2.Location = new System.Drawing.Point(8, 65);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 20);
+            this.label2.Size = new System.Drawing.Size(37, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Kod:";
             // 
@@ -64,9 +65,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label3.Location = new System.Drawing.Point(10, 140);
+            this.label3.Location = new System.Drawing.Point(8, 114);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 20);
+            this.label3.Size = new System.Drawing.Size(76, 17);
             this.label3.TabIndex = 3;
             this.label3.Text = "Kategorija:";
             // 
@@ -74,9 +76,10 @@
             // 
             this.catLabel.AutoSize = true;
             this.catLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.catLabel.Location = new System.Drawing.Point(127, 140);
+            this.catLabel.Location = new System.Drawing.Point(95, 114);
+            this.catLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.catLabel.Name = "catLabel";
-            this.catLabel.Size = new System.Drawing.Size(84, 20);
+            this.catLabel.Size = new System.Drawing.Size(72, 17);
             this.catLabel.TabIndex = 4;
             this.catLabel.Text = "Kategorija";
             // 
@@ -84,9 +87,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label4.Location = new System.Drawing.Point(10, 200);
+            this.label4.Location = new System.Drawing.Point(8, 162);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 20);
+            this.label4.Size = new System.Drawing.Size(51, 17);
             this.label4.TabIndex = 5;
             this.label4.Text = "Cijena:";
             // 
@@ -94,9 +98,10 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label5.Location = new System.Drawing.Point(10, 260);
+            this.label5.Location = new System.Drawing.Point(8, 211);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(73, 20);
+            this.label5.Size = new System.Drawing.Size(61, 17);
             this.label5.TabIndex = 7;
             this.label5.Text = "Količina:";
             // 
@@ -104,9 +109,10 @@
             // 
             this.quantLabel.AutoSize = true;
             this.quantLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.quantLabel.Location = new System.Drawing.Point(125, 260);
+            this.quantLabel.Location = new System.Drawing.Point(94, 211);
+            this.quantLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.quantLabel.Name = "quantLabel";
-            this.quantLabel.Size = new System.Drawing.Size(68, 20);
+            this.quantLabel.Size = new System.Drawing.Size(57, 17);
             this.quantLabel.TabIndex = 8;
             this.quantLabel.Text = "Količina";
             // 
@@ -114,9 +120,10 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label6.Location = new System.Drawing.Point(10, 320);
+            this.label6.Location = new System.Drawing.Point(8, 260);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(103, 20);
+            this.label6.Size = new System.Drawing.Size(88, 17);
             this.label6.TabIndex = 9;
             this.label6.Text = "Rok trajanja:";
             // 
@@ -124,9 +131,10 @@
             // 
             this.expLabel.AutoSize = true;
             this.expLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.expLabel.Location = new System.Drawing.Point(127, 320);
+            this.expLabel.Location = new System.Drawing.Point(95, 260);
+            this.expLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.expLabel.Name = "expLabel";
-            this.expLabel.Size = new System.Drawing.Size(98, 20);
+            this.expLabel.Size = new System.Drawing.Size(84, 17);
             this.expLabel.TabIndex = 10;
             this.expLabel.Text = "Rok trajanja";
             // 
@@ -134,9 +142,10 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label7.Location = new System.Drawing.Point(10, 380);
+            this.label7.Location = new System.Drawing.Point(8, 309);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(122, 20);
+            this.label7.Size = new System.Drawing.Size(104, 17);
             this.label7.TabIndex = 11;
             this.label7.Text = "Datum nabave:";
             // 
@@ -144,9 +153,10 @@
             // 
             this.dateLabel.AutoSize = true;
             this.dateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.dateLabel.Location = new System.Drawing.Point(147, 380);
+            this.dateLabel.Location = new System.Drawing.Point(110, 309);
+            this.dateLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.dateLabel.Name = "dateLabel";
-            this.dateLabel.Size = new System.Drawing.Size(117, 20);
+            this.dateLabel.Size = new System.Drawing.Size(100, 17);
             this.dateLabel.TabIndex = 12;
             this.dateLabel.Text = "Datum nabave";
             // 
@@ -154,9 +164,10 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label8.Location = new System.Drawing.Point(10, 440);
+            this.label8.Location = new System.Drawing.Point(8, 358);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(118, 36);
+            this.label8.Size = new System.Drawing.Size(72, 24);
             this.label8.TabIndex = 13;
             this.label8.Text = "Popusti";
             // 
@@ -164,9 +175,10 @@
             // 
             this.addDiscButton.AutoSize = true;
             this.addDiscButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.addDiscButton.Location = new System.Drawing.Point(136, 440);
+            this.addDiscButton.Location = new System.Drawing.Point(102, 358);
+            this.addDiscButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.addDiscButton.Name = "addDiscButton";
-            this.addDiscButton.Size = new System.Drawing.Size(128, 34);
+            this.addDiscButton.Size = new System.Drawing.Size(96, 28);
             this.addDiscButton.TabIndex = 14;
             this.addDiscButton.Text = "Dodaj popust";
             this.addDiscButton.UseVisualStyleBackColor = true;
@@ -175,9 +187,10 @@
             // changeNameButton
             // 
             this.changeNameButton.AutoSize = true;
-            this.changeNameButton.Location = new System.Drawing.Point(327, 20);
+            this.changeNameButton.Location = new System.Drawing.Point(245, 16);
+            this.changeNameButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.changeNameButton.Name = "changeNameButton";
-            this.changeNameButton.Size = new System.Drawing.Size(94, 33);
+            this.changeNameButton.Size = new System.Drawing.Size(70, 27);
             this.changeNameButton.TabIndex = 15;
             this.changeNameButton.Text = "Promijeni";
             this.changeNameButton.UseVisualStyleBackColor = true;
@@ -186,9 +199,10 @@
             // changeCodeButton
             // 
             this.changeCodeButton.AutoSize = true;
-            this.changeCodeButton.Location = new System.Drawing.Point(265, 77);
+            this.changeCodeButton.Location = new System.Drawing.Point(199, 63);
+            this.changeCodeButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.changeCodeButton.Name = "changeCodeButton";
-            this.changeCodeButton.Size = new System.Drawing.Size(94, 33);
+            this.changeCodeButton.Size = new System.Drawing.Size(70, 27);
             this.changeCodeButton.TabIndex = 16;
             this.changeCodeButton.Text = "Promijeni";
             this.changeCodeButton.UseVisualStyleBackColor = true;
@@ -197,9 +211,10 @@
             // changePriceButton
             // 
             this.changePriceButton.AutoSize = true;
-            this.changePriceButton.Location = new System.Drawing.Point(265, 197);
+            this.changePriceButton.Location = new System.Drawing.Point(199, 160);
+            this.changePriceButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.changePriceButton.Name = "changePriceButton";
-            this.changePriceButton.Size = new System.Drawing.Size(94, 33);
+            this.changePriceButton.Size = new System.Drawing.Size(70, 27);
             this.changePriceButton.TabIndex = 17;
             this.changePriceButton.Text = "Promijeni";
             this.changePriceButton.UseVisualStyleBackColor = true;
@@ -210,10 +225,11 @@
             this.nameTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.nameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.nameTextBox.Location = new System.Drawing.Point(10, 20);
+            this.nameTextBox.Location = new System.Drawing.Point(8, 16);
+            this.nameTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.ReadOnly = true;
-            this.nameTextBox.Size = new System.Drawing.Size(292, 27);
+            this.nameTextBox.Size = new System.Drawing.Size(219, 22);
             this.nameTextBox.TabIndex = 18;
             this.nameTextBox.Text = "Naziv";
             this.nameTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.nameTextBox_KeyUp);
@@ -223,10 +239,11 @@
             this.codeTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.codeTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.codeTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.codeTextBox.Location = new System.Drawing.Point(127, 80);
+            this.codeTextBox.Location = new System.Drawing.Point(95, 65);
+            this.codeTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.codeTextBox.Name = "codeTextBox";
             this.codeTextBox.ReadOnly = true;
-            this.codeTextBox.Size = new System.Drawing.Size(117, 19);
+            this.codeTextBox.Size = new System.Drawing.Size(88, 16);
             this.codeTextBox.TabIndex = 19;
             this.codeTextBox.Text = "Kod";
             this.codeTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.codeTextBox_KeyUp);
@@ -236,10 +253,11 @@
             this.priceTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.priceTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.priceTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.priceTextBox.Location = new System.Drawing.Point(127, 200);
+            this.priceTextBox.Location = new System.Drawing.Point(95, 162);
+            this.priceTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.priceTextBox.Name = "priceTextBox";
             this.priceTextBox.ReadOnly = true;
-            this.priceTextBox.Size = new System.Drawing.Size(117, 19);
+            this.priceTextBox.Size = new System.Drawing.Size(88, 16);
             this.priceTextBox.TabIndex = 20;
             this.priceTextBox.Text = "Cijena";
             this.priceTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.priceTextBox_KeyUp);
@@ -254,20 +272,23 @@
             this.discountTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66666F));
             this.discountTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66666F));
             this.discountTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66666F));
-            this.discountTable.Location = new System.Drawing.Point(10, 485);
+            this.discountTable.Location = new System.Drawing.Point(8, 394);
+            this.discountTable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.discountTable.Name = "discountTable";
             this.discountTable.RowCount = 1;
             this.discountTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.discountTable.Size = new System.Drawing.Size(831, 239);
+            this.discountTable.Size = new System.Drawing.Size(623, 194);
             this.discountTable.TabIndex = 21;
             // 
             // delButton
             // 
+            this.delButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.delButton.AutoSize = true;
             this.delButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.delButton.Location = new System.Drawing.Point(730, 22);
+            this.delButton.Location = new System.Drawing.Point(548, 18);
+            this.delButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.delButton.Name = "delButton";
-            this.delButton.Size = new System.Drawing.Size(94, 33);
+            this.delButton.Size = new System.Drawing.Size(70, 27);
             this.delButton.TabIndex = 22;
             this.delButton.Text = "Obriši";
             this.delButton.UseVisualStyleBackColor = true;
@@ -275,10 +296,10 @@
             // 
             // ProductDetails
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(853, 736);
+            this.ClientSize = new System.Drawing.Size(640, 598);
             this.Controls.Add(this.delButton);
             this.Controls.Add(this.discountTable);
             this.Controls.Add(this.priceTextBox);
@@ -299,6 +320,7 @@
             this.Controls.Add(this.catLabel);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ProductDetails";
             this.Text = "ProductDetails";
             this.ResumeLayout(false);

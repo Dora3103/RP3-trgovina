@@ -14,6 +14,7 @@ namespace Trgovina2
     {
         public Newproduct()
         {
+            this.MinimumSize = new System.Drawing.Size(400, 430);
             InitializeComponent();
         }
 

@@ -20,6 +20,7 @@ namespace Trgovina2
         OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\login.accdb");
         public Form1()
         {
+            this.MinimumSize = new System.Drawing.Size(400, 230);
             InitializeComponent();
             textBox2.UseSystemPasswordChar = true;
         }

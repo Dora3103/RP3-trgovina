@@ -63,9 +63,6 @@ namespace Trgovina2
                     });
                     dpTable.Controls.Remove(dp);
                 };
-
-
-
             }
         }
 

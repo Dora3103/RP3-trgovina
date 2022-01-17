@@ -16,6 +16,7 @@ namespace Trgovina2
         dataBase db;
         public ProductDetails()
         {
+            this.MinimumSize = new System.Drawing.Size(650, 630);
             InitializeComponent();
         }
 

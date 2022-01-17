@@ -14,6 +14,7 @@ namespace Trgovina2
     {
         public ExpiredProducts()
         {
+            this.MinimumSize = new System.Drawing.Size(600, 400);
             InitializeComponent();
             showList(0);
         }
@@ -39,6 +40,8 @@ namespace Trgovina2
 
         private void showList(int days)
         {
+
+            /*
             List<proizvod> expired_products = GetExpiredProducts(days);
 
             productControl header = new productControl();
@@ -74,13 +77,49 @@ namespace Trgovina2
                 };
 
                 productTable.RowCount++;
+            }*/
+
+            dataBase db = new dataBase();
+            List<proizvod> proizvodi = db.allProducts();
+
+            productControl header = new productControl();
+            header.Width = productTable.Width;
+            header.detButton = false;
+            header.textSize = 12;
+            RowStyle temp = productTable.RowStyles[0];
+            ColumnStyle temp2 = productTable.ColumnStyles[0];
+
+            productTable.RowStyles.Add(new RowStyle(temp.SizeType, temp.Height));
+            productTable.Controls.Add(header, 0, productTable.RowCount - 1);
+            productTable.SetColumnSpan(header, productTable.ColumnCount);
+            productTable.RowCount++;
+            foreach (proizvod p in proizvodi)
+            {
+                productControl prod = new productControl();
+                prod.id = p.id;
+                prod.name = p.name;
+                prod.code = p.code;
+                prod.exp = p.exp;
+                prod.price = p.price;
+                prod.Width = productTable.Width;
+                //prod.labelMaxWidth = (int)Math.Ceiling(temp2.Width);
+                //prod.labelAutoSize = true;
+
+                temp = productTable.RowStyles[0];
+
+                productTable.RowStyles.Add(new RowStyle(temp.SizeType, temp.Height));
+                productTable.Controls.Add(prod, 0, productTable.RowCount - 1);
+                productTable.SetColumnSpan(prod, productTable.ColumnCount);
+                prod.detail += (sender, e) =>
+                {
+                    ProductDetails prodDet = new ProductDetails(p);
+                    prodDet.ShowDialog();
+                };
+
+                productTable.RowCount++;
             }
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-    
-        }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {

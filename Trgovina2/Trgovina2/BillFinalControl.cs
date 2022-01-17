@@ -29,5 +29,6 @@ namespace Trgovina2
             labelTotal.Text = ammount;
             labelType.Text = type;
         }
+
     }
 }

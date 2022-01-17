@@ -38,14 +38,14 @@ namespace Trgovina2
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(410, 56);
+            this.textBox1.Location = new System.Drawing.Point(146, 39);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(181, 20);
             this.textBox1.TabIndex = 0;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(410, 102);
+            this.textBox2.Location = new System.Drawing.Point(146, 85);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(181, 20);
             this.textBox2.TabIndex = 1;
@@ -53,7 +53,7 @@ namespace Trgovina2
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(440, 140);
+            this.button2.Location = new System.Drawing.Point(176, 123);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(111, 23);
             this.button2.TabIndex = 3;
@@ -64,7 +64,7 @@ namespace Trgovina2
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(299, 59);
+            this.label1.Location = new System.Drawing.Point(35, 42);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(107, 13);
             this.label1.TabIndex = 4;
@@ -73,7 +73,7 @@ namespace Trgovina2
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(299, 105);
+            this.label2.Location = new System.Drawing.Point(35, 88);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(106, 13);
             this.label2.TabIndex = 5;
@@ -84,7 +84,7 @@ namespace Trgovina2
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(429, 189);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);

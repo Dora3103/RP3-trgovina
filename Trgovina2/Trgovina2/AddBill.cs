@@ -13,11 +13,13 @@ namespace Trgovina2
 {
     public partial class AddBill : Form
     {
+        double pdv = 25;
         public AddBill()
         {
             InitializeComponent();
             fetchData();
             comboBox1.SelectedIndex = 0;
+            textBox4.Text = "25";
         }
 
         public void fetchData()
@@ -86,7 +88,8 @@ namespace Trgovina2
                             kolicina = textBox2.Text,
                             naziv = dt.Rows[0]["Naziv"].ToString(),
                             //cijena = Convert.ToDouble(dt.Rows[0]["Cijena"])
-                            cijena = (int)dt.Rows[0]["Cijena"]
+                            cijena = (int)dt.Rows[0]["Cijena"],
+                            pdv = textBox4.Text
                         };
                         kontrola.Margin = new Padding(5, 5, 5, 5);
                         flowLayoutPanel1.Controls.Add(kontrola);
@@ -161,7 +164,7 @@ namespace Trgovina2
 
         private double makeBill(BillFinalControl control)
         {            
-            string[] row = new string[4];
+            string[] row = new string[5];
             double total = 0;
 
             foreach (BillControl item in flowLayoutPanel1.Controls)
@@ -199,14 +202,20 @@ namespace Trgovina2
                     MessageBox.Show("Error: " + ex);
                 }
 
-                double productTotal = afterDiscount * Convert.ToDouble(item.kolicina);
+                double productTotal = afterDiscount * Convert.ToDouble(item.kolicina) * (Convert.ToDouble(item.pdv) / 100 + 1);
                 total+= productTotal;
                 row[2] = afterDiscount.ToString("0.##");
-                row[3] = productTotal.ToString("0.##");
+                row[3] = pdv.ToString() + "%";
+                row[4] = productTotal.ToString("0.##");
                 control.populateTable(row);
             }
 
             return total;
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+            pdv = double.Parse(textBox4.Text);
         }
     }
 }

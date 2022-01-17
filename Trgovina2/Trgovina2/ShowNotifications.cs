@@ -15,10 +15,25 @@ namespace Trgovina2
 {
     public partial class ShowNotifications : Form
     {
-        public ShowNotifications()
+        int broj_dana_za_provjeru = 0;
+        int kolicina_proizvoda_za_provjeru = 0;
+        public ShowNotifications(int d, int k)
         {
+            broj_dana_za_provjeru = d;
+            kolicina_proizvoda_za_provjeru = k;
+
             InitializeComponent();
+            textBox1.Text = broj_dana_za_provjeru.ToString();
+            textBox2.Text = kolicina_proizvoda_za_provjeru.ToString();
+            
             ShowInitialMessage();
+        }
+        public int GetBrojDana() {
+            return broj_dana_za_provjeru;
+        }
+
+        public int GetKolicina() {
+            return kolicina_proizvoda_za_provjeru;
         }
 
         private List<proizvod> GetExpiredProducts(int days) {
@@ -36,27 +51,72 @@ namespace Trgovina2
             return prosao_rok;
         }
 
-        private void ShowInitialMessage()
+        private List<proizvod> GetLowInStockProducts(int quant)
         {
-            List<proizvod> istekao_rok = GetExpiredProducts(0);
-            if (istekao_rok.Count == 0)
+            dataBase db = new dataBase();
+            List<proizvod> proizvodi = db.allProducts();
+
+            List<proizvod> low_in_stock = new List<proizvod>();
+
+            foreach (proizvod p in proizvodi)
             {
-                label1.Text = "Trenutno nema obavijesti! Nema proizvoda isteklog roka";
+                if (p.quant <= quant)
+                {
+                    low_in_stock.Add(p);
+                }
             }
-            else {
-                label1.Text = "Obavijest: Postoje proizvodi kojima je istekao rok";
-            }
+            return low_in_stock;
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void ShowInitialMessage()
         {
+            List<proizvod> istekao_rok = GetExpiredProducts(broj_dana_za_provjeru);
+            List<proizvod> niske_zalihe = GetLowInStockProducts(kolicina_proizvoda_za_provjeru);
 
+            int broj_obavijesti = 0;
+            if (istekao_rok.Count > 0) broj_obavijesti++;
+            if (niske_zalihe.Count > 0) broj_obavijesti++;
+
+            label1.Text = "Broj obavijesti: " + broj_obavijesti;
+
+            if (istekao_rok.Count == 0)
+            {
+                label2.Text = "Trenutno nema proizvoda koji su blizu isteka roka!";
+            }
+            else {
+                label2.Text = "Obavijest: Postoje proizvodi kojima su blizu isteka roka";
+            }
+
+            if(niske_zalihe.Count == 0)
+            {
+                label3.Text = "Trenutno nema proizvoda s niskim zalihama!";
+            }
+            else
+            {
+                label3.Text = "Obavijest: Postoje proizvodi s niskim zalihama!";
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             ExpiredProducts exp_p = new ExpiredProducts();
             exp_p.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            LowStockProducts l = new LowStockProducts();
+            l.ShowDialog();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            broj_dana_za_provjeru = int.Parse(textBox1.Text);
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            kolicina_proizvoda_za_provjeru = int.Parse(textBox2.Text);
         }
     }
 }
