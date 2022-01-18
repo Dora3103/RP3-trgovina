@@ -15,7 +15,7 @@ namespace Trgovina2
         public BillFinalControl()
         {
             InitializeComponent();
-            label2.Text = Form1.quantity;
+            label2.Text = Form1.name;
             labelDate.Text = DateTime.Now.ToString();
         }
 

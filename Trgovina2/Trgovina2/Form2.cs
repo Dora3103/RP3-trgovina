@@ -19,58 +19,58 @@ namespace Trgovina2
         {
             this.MinimumSize = new System.Drawing.Size(480, 360);
             InitializeComponent();
-            label2.Text = Form1.quantity;
+            label2.Text = Form1.name;  // upisujemo username korisnika
             CheckForNotif();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             //this.Hide();
-            if (Form1.quantity == "admin")
+            if (Form1.name == "admin")  // samo šef smije dodavati nove radnike u bazu - username je jedinstven za svakog radnika (samo šef ima username admin)
             {
-                Register r = new Register();
+                Register r = new Register();  // otvori formu u kojoj će to moći napraviti
                 r.ShowDialog();
             }
             else
             {
-                MessageBox.Show("Samo šef smije dodavati nove radnike!");
+                MessageBox.Show("Samo šef smije dodavati nove radnike!"); // javi upozorenje ako netko od radnika to pokuša 
             }
             CheckForNotif();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (Form1.quantity == "admin")
+            if (Form1.name == "admin")  // samo šef smije dodavati nove proizvode
             {
-                Newproduct p = new Newproduct();
+                Newproduct p = new Newproduct(); // otvori formu u kojoj će to moći napraviti
                 p.ShowDialog();
             }
             else
             {
-                MessageBox.Show("Samo šef smije dodavati nove proizvode!");
+                MessageBox.Show("Samo šef smije dodavati nove proizvode!"); // javi upozorenje ako netko od radnika to pokuša
             }
             CheckForNotif();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (Form1.quantity == "admin")
+            if (Form1.name == "admin") // samo šef smije micati proizvode iz baze
             {
-                Removeproduct p = new Removeproduct();
+                Removeproduct p = new Removeproduct(); // otvori formu u kojoj će to moći napraviti
                 p.ShowDialog();
             }
             else
             {
-                MessageBox.Show("Samo šef smije uklanjati proizvode!");
+                MessageBox.Show("Samo šef smije uklanjati proizvode!"); // javi upozorenje ako netko od radnika to pokuša
             }
             CheckForNotif();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e) // odlogiravanje radnika
         {
-            this.Hide();
+            this.Close();
             Form1 f = new Form1();
-            f.Show();
+            f.Show(); // ponovno otvori login formu kako bi se drugi radnik mogao ulogirati
             CheckForNotif();
         }
 
