@@ -14,6 +14,8 @@ namespace Trgovina2
     {
         int _cijena;
 
+
+        // kontrola koja služi samo za prikazivanje proizvoda koje smo dodali na račun
         public BillControl()
         {
             InitializeComponent();

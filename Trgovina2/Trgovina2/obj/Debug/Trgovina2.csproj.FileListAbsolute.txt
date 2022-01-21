@@ -118,3 +118,12 @@ C:\Users\avedo\Downloads\novotrgovina\RP3-trgovina-main\Trgovina2\Trgovina2\obj\
 C:\Users\avedo\Downloads\novotrgovina\RP3-trgovina-main\Trgovina2\Trgovina2\obj\Debug\Trgovina2.csproj.CoreCompileInputs.cache
 C:\Users\avedo\Downloads\novotrgovina\RP3-trgovina-main\Trgovina2\Trgovina2\obj\Debug\Trgovina2.exe
 C:\Users\avedo\Downloads\novotrgovina\RP3-trgovina-main\Trgovina2\Trgovina2\obj\Debug\Trgovina2.pdb
+C:\Users\matij\OneDrive\Radna površina\faks\3. semestar\racunarski praktikum 3\RP3-trgovina\Trgovina2\Trgovina2\obj\Debug\Trgovina2.AddBill.resources
+C:\Users\matij\OneDrive\Radna površina\faks\3. semestar\racunarski praktikum 3\RP3-trgovina\Trgovina2\Trgovina2\obj\Debug\Trgovina2.addDiscount.resources
+C:\Users\matij\OneDrive\Radna površina\faks\3. semestar\racunarski praktikum 3\RP3-trgovina\Trgovina2\Trgovina2\obj\Debug\Trgovina2.BillControl.resources
+C:\Users\matij\OneDrive\Radna površina\faks\3. semestar\racunarski praktikum 3\RP3-trgovina\Trgovina2\Trgovina2\obj\Debug\Trgovina2.BillFinalControl.resources
+C:\Users\matij\OneDrive\Radna površina\faks\3. semestar\racunarski praktikum 3\RP3-trgovina\Trgovina2\Trgovina2\obj\Debug\Trgovina2.discountControl.resources
+C:\Users\matij\OneDrive\Radna površina\faks\3. semestar\racunarski praktikum 3\RP3-trgovina\Trgovina2\Trgovina2\obj\Debug\Trgovina2.ExpiredProducts.resources
+C:\Users\matij\OneDrive\Radna površina\faks\3. semestar\racunarski praktikum 3\RP3-trgovina\Trgovina2\Trgovina2\obj\Debug\Trgovina2.LowStockProducts.resources
+C:\Users\matij\OneDrive\Radna površina\faks\3. semestar\racunarski praktikum 3\RP3-trgovina\Trgovina2\Trgovina2\obj\Debug\Trgovina2.ProductDetails.resources
+C:\Users\matij\OneDrive\Radna površina\faks\3. semestar\racunarski praktikum 3\RP3-trgovina\Trgovina2\Trgovina2\obj\Debug\Trgovina2.ShowNotifications.resources
