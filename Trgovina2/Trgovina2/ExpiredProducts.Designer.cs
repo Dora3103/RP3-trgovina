@@ -67,15 +67,15 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(30, 15);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(111, 13);
+            this.label2.Size = new System.Drawing.Size(172, 13);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Broj dana za pretragu:";
+            this.label2.Text = "Broj dana za pretragu roka trajanja:";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(142, 13);
+            this.textBox1.Location = new System.Drawing.Point(209, 13);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(24, 20);
+            this.textBox1.Size = new System.Drawing.Size(42, 20);
             this.textBox1.TabIndex = 5;
             this.textBox1.Text = "0";
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);

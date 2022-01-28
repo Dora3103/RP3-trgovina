@@ -15,50 +15,49 @@ namespace Trgovina2
 {
     public partial class ShowNotifications : Form
     {
-        int broj_dana_za_provjeru = 0;
-        int kolicina_proizvoda_za_provjeru = 0;
+        int num_days_to_check = 0;
+        int low_quantity_threshold = 0;
         public ShowNotifications(int d, int k)
         {
-            broj_dana_za_provjeru = d;
-            kolicina_proizvoda_za_provjeru = k;
+            num_days_to_check = d;
+            low_quantity_threshold = k;
 
             InitializeComponent();
-            textBox1.Text = broj_dana_za_provjeru.ToString();
-            textBox2.Text = kolicina_proizvoda_za_provjeru.ToString();
+
+            // Postavljamo vrijednosti broja dana i minimalnog broja proizvoda na zalihi, 
+            // kako bi se ispravno prikazivale poruke vezane za postavke obavijesti. 
+            textBox1.Text = num_days_to_check.ToString();
+            textBox2.Text = low_quantity_threshold.ToString();
             
+            // Prikazujemo pocetni sadrzaj obavijesti. 
             ShowInitialMessage();
         }
-        public int GetBrojDana() {
-            return broj_dana_za_provjeru;
+
+        public int GetNumDaysToCheck() {
+            return num_days_to_check;
         }
 
-        public int GetKolicina() {
-            return kolicina_proizvoda_za_provjeru;
+        public int GetLowQuantityThreshold() {
+            return low_quantity_threshold;
         }
 
-        private List<proizvod> GetExpiredProducts(int days) {
-            dataBase db = new dataBase();
-            List<proizvod> proizvodi = db.allProducts();
-
-            List<proizvod> prosao_rok = new List<proizvod>();
-
-            DateTime granica = DateTime.Now.AddDays(days);
-            foreach (proizvod p in proizvodi) {
-                if (DateTime.Compare(p.exp, granica) < 0) {
-                    prosao_rok.Add(p);
+        private List<proizvod> GetExpiredProducts(int days, List<proizvod> products) {
+            List<proizvod> expired_products = new List<proizvod>();
+            // Spremamo one proizvode kojima rok trajanja istice u zadanom broju dana.
+            DateTime cutoff_date = DateTime.Now.AddDays(days);
+            foreach (proizvod p in products) {
+                if (DateTime.Compare(p.exp, cutoff_date) <= 0) {
+                    expired_products.Add(p);
                 }
             }
-            return prosao_rok;
+            return expired_products;
         }
 
-        private List<proizvod> GetLowInStockProducts(int quant)
+        private List<proizvod> GetLowInStockProducts(int quant, List<proizvod> products)
         {
-            dataBase db = new dataBase();
-            List<proizvod> proizvodi = db.allProducts();
-
             List<proizvod> low_in_stock = new List<proizvod>();
-
-            foreach (proizvod p in proizvodi)
+            // Dohvacamo one proizvode kojima je trenutna kolicina manja od zadane vrijednosti quant. 
+            foreach (proizvod p in products)
             {
                 if (p.quant <= quant)
                 {
@@ -70,16 +69,23 @@ namespace Trgovina2
 
         private void ShowInitialMessage()
         {
-            List<proizvod> istekao_rok = GetExpiredProducts(broj_dana_za_provjeru);
-            List<proizvod> niske_zalihe = GetLowInStockProducts(kolicina_proizvoda_za_provjeru);
+            dataBase db = new dataBase();
+            List<proizvod> all_products = db.allProducts();
 
+            // Dohvacamo proizvode kojima je prosao rok trajanja i kojih imamo malo na zalihi.  
+            List<proizvod> expired_products = GetExpiredProducts(num_days_to_check, all_products);
+            List<proizvod> low_in_stock = GetLowInStockProducts(low_quantity_threshold, all_products);
+
+            // Prikazat cemo broj obavijesti u pocetnoj poruci. 
             int broj_obavijesti = 0;
-            if (istekao_rok.Count > 0) broj_obavijesti++;
-            if (niske_zalihe.Count > 0) broj_obavijesti++;
+            if (expired_products.Count > 0) broj_obavijesti++;
+            if (low_in_stock.Count > 0) broj_obavijesti++;
+
+            // Slijedi postavljanje poruka za obavijesti 
 
             label1.Text = "Broj obavijesti: " + broj_obavijesti;
 
-            if (istekao_rok.Count == 0)
+            if (expired_products.Count == 0)
             {
                 label2.Text = "Trenutno nema proizvoda koji su blizu isteka roka!";
             }
@@ -87,7 +93,7 @@ namespace Trgovina2
                 label2.Text = "Obavijest: Postoje proizvodi kojima su blizu isteka roka";
             }
 
-            if(niske_zalihe.Count == 0)
+            if(low_in_stock.Count == 0)
             {
                 label3.Text = "Trenutno nema proizvoda s niskim zalihama!";
             }
@@ -111,12 +117,12 @@ namespace Trgovina2
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            broj_dana_za_provjeru = int.Parse(textBox1.Text);
+            num_days_to_check = int.Parse(textBox1.Text);
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            kolicina_proizvoda_za_provjeru = int.Parse(textBox2.Text);
+            low_quantity_threshold = int.Parse(textBox2.Text);
         }
     }
 }

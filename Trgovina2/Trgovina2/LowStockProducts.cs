@@ -14,7 +14,7 @@ namespace Trgovina2
     {
         public LowStockProducts()
         {
-            this.MinimumSize = new System.Drawing.Size(600, 400);
+            this.MinimumSize = new System.Drawing.Size(800, 400);
             InitializeComponent();
             showList(0);
         }
@@ -25,10 +25,12 @@ namespace Trgovina2
             dataBase db = new dataBase();
             List<proizvod> proizvodi = db.allProducts();
 
+            // Lista koja ce sadrzavati proizvode s niskim zalihama.
             List<proizvod> low_in_stock = new List<proizvod>();
 
             foreach (proizvod p in proizvodi)
             {
+                // Provjera kolicine proizvoda. 
                 if (p.quant <= quant)
                 {
                     low_in_stock.Add(p);
@@ -41,6 +43,7 @@ namespace Trgovina2
         {
             List<proizvod> low_in_stock = GetLowInStockProducts(quant);
 
+            // Inicijalizacija tablice kojom cemo prikazati proizvode s niskim zalihama,
             productControl header = new productControl();
             header.Width = productTable.Width;
             header.detButton = false;
@@ -52,8 +55,11 @@ namespace Trgovina2
             productTable.Controls.Add(header, 0, productTable.RowCount - 1);
             productTable.SetColumnSpan(header, productTable.ColumnCount);
             productTable.RowCount++;
+
+            // Dodajemo proizvod po proizvod u tablicu. 
             foreach (proizvod p in low_in_stock)
             {
+                // Inicijaliziramo productControl za proizvod p kojeg trenutno obradjujemo. 
                 productControl prod = new productControl();
                 prod.id = p.id;
                 prod.name = p.name;
@@ -67,6 +73,7 @@ namespace Trgovina2
                 productTable.RowStyles.Add(new RowStyle(temp.SizeType, temp.Height));
                 productTable.Controls.Add(prod, 0, productTable.RowCount - 1);
                 productTable.SetColumnSpan(prod, productTable.ColumnCount);
+                // Omogucavamo prikaz vise detalja za proizvod koristenjem ProductDetails objekta. 
                 prod.detail += (sender, e) =>
                 {
                     ProductDetails prodDet = new ProductDetails(p);
@@ -77,16 +84,20 @@ namespace Trgovina2
             }
         }
 
-
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            label1.Text = "Prikaz proizvoda kojih nema više od " + textBox1.Text + " na zalihi";
+            // Praznimo tablicu. 
             while (productTable.Controls.Count > 0)
             {
                 productTable.Controls[0].Dispose();
             }
 
-            showList(int.Parse(textBox1.Text.ToString()));
+            // Ako u textboxu postoji broj, generiramo odgovarajuc sadrzaj tablice.
+            if (int.TryParse(textBox1.Text, out _))
+            {
+                showList(int.Parse(textBox1.Text.ToString()));
+            }
         }
+
     }
 }

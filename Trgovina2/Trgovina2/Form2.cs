@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -20,7 +21,7 @@ namespace Trgovina2
             this.MinimumSize = new System.Drawing.Size(480, 360);
             InitializeComponent();
             label2.Text = Form1.name;  // upisujemo username korisnika
-            CheckForNotif();
+            CheckForNotif(); // osvjezi obavijesti
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -35,7 +36,7 @@ namespace Trgovina2
             {
                 MessageBox.Show("Samo šef smije dodavati nove radnike!"); // javi upozorenje ako netko od radnika to pokuša 
             }
-            CheckForNotif();
+            CheckForNotif(); // osvjezi obavijesti
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -49,7 +50,7 @@ namespace Trgovina2
             {
                 MessageBox.Show("Samo šef smije dodavati nove proizvode!"); // javi upozorenje ako netko od radnika to pokuša
             }
-            CheckForNotif();
+            CheckForNotif(); // osvjezi obavijesti
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -63,7 +64,7 @@ namespace Trgovina2
             {
                 MessageBox.Show("Samo šef smije uklanjati proizvode!"); // javi upozorenje ako netko od radnika to pokuša
             }
-            CheckForNotif();
+            CheckForNotif(); // osvjezi obavijesti
         }
 
         private void button4_Click(object sender, EventArgs e) // odlogiravanje radnika
@@ -71,7 +72,7 @@ namespace Trgovina2
             this.Close();
             Form1 f = new Form1();
             f.Show(); // ponovno otvori login formu kako bi se drugi radnik mogao ulogirati
-            CheckForNotif();
+            CheckForNotif(); // osvjezi obavijesti
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -79,44 +80,55 @@ namespace Trgovina2
             //this.Hide();
             ListOfProducts f = new ListOfProducts();
             f.Show();
-            CheckForNotif();
+            CheckForNotif(); // osvjezi obavijesti
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
             AddBill p = new AddBill();
             p.ShowDialog();
-            CheckForNotif();
+            CheckForNotif(); // osvjezi obavijesti
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
             ShowNotifications n = new ShowNotifications(expiration_days, min_amount);
             n.ShowDialog();
-
-            expiration_days = n.GetBrojDana();
-            min_amount = n.GetKolicina();
-            CheckForNotif();
+            // Pamtimo zadnje konfiguracijske vrijednosti za prikaz obavijesti, tj. broj dana
+            // unutar kojih provjeravamo istek roka trajanja te minimalan broj proizvoda 
+            // koje zelimo imati na zalihi. 
+            expiration_days = n.GetNumDaysToCheck();
+            min_amount = n.GetLowQuantityThreshold();
+            CheckForNotif(); // osvjezi obavijesti
         }
 
         private void CheckForNotif() {
             bool notification = false;
 
-            dataBase db = new dataBase();
-            List<proizvod> proizvodi = db.allProducts();
+            DateTime cutoff_date = DateTime.Now.AddDays(expiration_days);
 
-            DateTime granica = DateTime.Now.AddDays(expiration_days);
-            foreach (proizvod p in proizvodi)
+            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\login.accdb");
+            try
             {
-                if (DateTime.Compare(p.exp, granica) < 0)
+                con.Open();
+                // provjeravamo postoje li u bazi proizvodi za koje bi trebalo prikazati notifikaciju
+                OleDbDataAdapter sda = new OleDbDataAdapter("select count(*) from proizvodi where Rok_trajanja <= " 
+                    + cutoff_date.ToOADate() + "or Kolicina <= " + min_amount.ToString(), con);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                if (dt.Rows[0][0].ToString() != "0")
                 {
                     notification = true;
                 }
-                if (p.quant <= min_amount) {
-                    notification = true;
-                }
+                con.Close();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
             }
 
+            // Ako postoji obavijest, prikazujemo znak lampice. 
+            // Ako ne postoji obavijest, skrivamo taj znak. 
             if (notification)
             {
                 notif.Text = "💡";
