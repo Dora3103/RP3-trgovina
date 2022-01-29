@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Trgovina2
 {
-    public partial class Newproduct : Form
+    public partial class Newproduct : Form //dodavanje novog proizvoda
     {
         public Newproduct()
         {

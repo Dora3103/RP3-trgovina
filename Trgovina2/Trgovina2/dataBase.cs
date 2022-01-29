@@ -10,14 +10,14 @@ namespace Trgovina2
 {
     internal class dataBase
     {
-        public List<proizvod> serachForExpired()
+        public List<proizvod> serachForExpired() //dohvati sve proizvode kojima je istekao rok trajanja (u odnosu na današnji datum)
         {
             List<proizvod> ret = new List<proizvod>();
             OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\login.accdb");
             try
             {
                 con.Open();
-                //OleDbDataAdapter sda = new OleDbDataAdapter("select ID, Naziv, Kolicina, Kod, Rok_trajanja from proizvodi where Rok_trajanja >" + DateTime.Today.ToString("dd-MM-yy"), con);
+
                 OleDbDataAdapter sda = new OleDbDataAdapter("select ID, Naziv, Kolicina, Kod, Rok_trajanja from proizvodi where Rok_trajanja < Date() order by Rok_trajanja, Naziv", con);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
@@ -38,13 +38,12 @@ namespace Trgovina2
             catch (Exception e)
             {
                 Console.WriteLine(e);
-                //throw;
             }
 
             return ret;
         }
 
-        public void deleteProduct(int id)
+        public void deleteProduct(int id) //izbriši proizvod s ID-em id
         {
             OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\login.accdb");
             try
@@ -52,7 +51,6 @@ namespace Trgovina2
                 con.Open();
                 OleDbCommand cmd = new OleDbCommand("delete from proizvodi where ID = " + id, con);
                 int deleted = cmd.ExecuteNonQuery();
-                //Console.WriteLine("broj obrisanih redova " + deleted.ToString());
                 con.Close();
             }
             catch(Exception e)
@@ -62,7 +60,7 @@ namespace Trgovina2
             
         }
 
-        public bool addProduct(proizvod p)
+        public bool addProduct(proizvod p) //dodaj novi proizvod
         {
             OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\login.accdb");
             int check = checkIfExists(p);
@@ -85,7 +83,7 @@ namespace Trgovina2
             }
         }
 
-        public int checkIfExists(proizvod p)
+        public int checkIfExists(proizvod p) //provjeri postoji li već proizvod sa zadanim svojstvima
         {
             OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\login.accdb");
             try
@@ -115,7 +113,7 @@ namespace Trgovina2
             
         }
 
-        public bool upgradeQuantity(proizvod p)
+        public bool upgradeQuantity(proizvod p) //promijeni količinu proizvoda (povećaj)
         {
             OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\login.accdb");
             try
@@ -146,7 +144,7 @@ namespace Trgovina2
             }
         }
 
-        public int checkQuantity(string productName)
+        public int checkQuantity(string productName) //provjeri koliko komada proizvoda s imenom productName je ostalo
         {
             OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\login.accdb");
             try
@@ -174,7 +172,7 @@ namespace Trgovina2
 
         }
 
-        public List<proizvod> allProducts()
+        public List<proizvod> allProducts() //vrati listu svih proizvoda u bazi
         {
             List<proizvod> ret = new List<proizvod>();
             OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\login.accdb");
@@ -209,7 +207,7 @@ namespace Trgovina2
             return ret;
         }
 
-        public List<discount> getDiscountsByProuctId(int id)
+        public List<discount> getDiscountsByProuctId(int id) //dohvati popuste za proizvod s ID-em id
         {
             List<discount> ret = new List<discount>();
             OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\login.accdb");
@@ -243,7 +241,7 @@ namespace Trgovina2
             return ret;
         }
 
-        public bool addDiscount(discount d)
+        public bool addDiscount(discount d) //dodaj novi popust
         {
             OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\login.accdb");
             try
@@ -252,7 +250,6 @@ namespace Trgovina2
                 OleDbCommand cmd = new OleDbCommand("insert into popust ([proizvodId],[postotakPopusta],[datumOd],[datumDo]) values(" +
                    d.productId + "," + d.percent + ","  + d.from.ToString("#d/M/yyyy#") + "," + d.to.ToString("#d/M/yyyy#") + ")", con);
                 int inserted = cmd.ExecuteNonQuery();
-                //Console.WriteLine("ubaceno redaka " + inserted);
                 con.Close();
                 return true;
             }
@@ -264,7 +261,7 @@ namespace Trgovina2
 
         }
 
-        public bool changeName(int id, string name)
+        public bool changeName(int id, string name) //promijeni ime proizvoda s ID-em id u name
         {
             OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\login.accdb");
             try
@@ -282,7 +279,7 @@ namespace Trgovina2
             }
         }
 
-        public bool changePrice(int id, int price)
+        public bool changePrice(int id, int price) //promijeni cijenu proizvoda s ID-em id u price
         {
 
             OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\login.accdb");
@@ -301,7 +298,7 @@ namespace Trgovina2
             }
         }
 
-        public bool changeCode(int id, string code)
+        public bool changeCode(int id, string code) //promijeni kod proizvoda s ID-em id u code
         {
 
             OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\login.accdb");
@@ -320,7 +317,7 @@ namespace Trgovina2
             }
         }
 
-        public bool deleteDiscount(int id)
+        public bool deleteDiscount(int id) //obriši popust s ID-em id
         {
             OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\login.accdb");
             try
@@ -328,7 +325,6 @@ namespace Trgovina2
                 con.Open();
                 OleDbCommand cmd = new OleDbCommand("delete from popust where ID = " + id, con);
                 int deleted = cmd.ExecuteNonQuery();
-                //Console.WriteLine("broj obrisanih redova " + deleted.ToString());
                 con.Close();
                 return true;
             }
@@ -339,7 +335,7 @@ namespace Trgovina2
             }
         }
 
-        public discount getNewestDiscount(int productId)
+        public discount getNewestDiscount(int productId) //pronađi zadnji dodani popust za zadani proizvod
         {
             OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\login.accdb");
             discount ret = new discount();
@@ -365,8 +361,6 @@ namespace Trgovina2
                 Console.WriteLine(e);
                 return ret;
             }
-
-
             return ret;
         }
     }

@@ -25,25 +25,25 @@ namespace Trgovina2
             get { return _id; }
         }
 
-        public int productId
+        public int productId //id proizvoda
         {
             set { _productId = value; }
             get { return _productId; }
         }
 
-        public double percent
+        public double percent //postotak popusta
         {
             get { return double.Parse(percentTextBox.Text); }
             set { percentTextBox.Text = value.ToString(); }
         }
 
-        public DateTime from
+        public DateTime from //datum početka popusta
         {
             get { return DateTime.Parse(fromTextBox.Text); }
             set { fromTextBox.Text = value.ToString("d.M.yyyy"); }
         }
 
-        public DateTime to
+        public DateTime to //datum završetka popusta
         {
             get { return DateTime.Parse(toTextBox.Text); }
             set { toTextBox.Text = value.ToString("d.M.yyyy"); }
@@ -121,7 +121,7 @@ namespace Trgovina2
             }
         }
 
-        private void deleteButton_Click(object sender, EventArgs e)
+        private void deleteButton_Click(object sender, EventArgs e) //obriši popust
         {
             if (delete != null)
             {
