@@ -78,7 +78,7 @@ namespace Trgovina2
                 // Omogucavamo prikaz vise detalja za proizvod koristenjem ProductDetails objekta. 
                 prod.detail += (sender, e) =>
                 {
-                    ProductDetails prodDet = new ProductDetails(p);
+                    ProductDetails prodDet = new ProductDetails(p,Form1.name);
                     prodDet.ShowDialog();
                 };
 

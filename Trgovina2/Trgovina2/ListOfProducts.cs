@@ -12,9 +12,11 @@ namespace Trgovina2
 {
     public partial class ListOfProducts : Form //lista svih proizvoda
     {
-        public ListOfProducts()
+        private string name;
+        public ListOfProducts(string name)
         {
             InitializeComponent();
+            this.name = name;
             showList();
         }
 
@@ -52,7 +54,7 @@ namespace Trgovina2
                 productTable.SetColumnSpan(prod, productTable.ColumnCount);
                 prod.detail += (sender, e) => //događaj prikazivanja detalja o proizvodu
                 {
-                     ProductDetails prodDet = new ProductDetails(p);
+                     ProductDetails prodDet = new ProductDetails(p, name);
                      prodDet.ShowDialog(); //otvori dialog s detaljima o proizvodu
                 };
 

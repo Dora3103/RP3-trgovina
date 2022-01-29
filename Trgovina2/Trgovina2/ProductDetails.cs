@@ -14,16 +14,18 @@ namespace Trgovina2
     {
         int _id;
         dataBase db;
+        string _name;
         public ProductDetails()
         {
             this.MinimumSize = new System.Drawing.Size(650, 630);
             InitializeComponent();
         }
 
-        public ProductDetails(proizvod p) // ispiši detalje o proizvodu (naziv, kod, cijena, kategorija, količina, datum nabave, rok trajanja)
+        public ProductDetails(proizvod p, string name) // ispiši detalje o proizvodu (naziv, kod, cijena, kategorija, količina, datum nabave, rok trajanja)
         {
             InitializeComponent();
             _id = p.id;
+            _name = name;
             nameTextBox.Text = p.name;
             codeTextBox.Text = p.code;
             quantLabel.Text = p.quant.ToString();
@@ -31,6 +33,14 @@ namespace Trgovina2
             priceTextBox.Text = p.price.ToString();
             expLabel.Text = p.exp.ToString("d.M.yyyy");
             dateLabel.Text = p.date.ToString("d.M.yyyy");
+            if (_name != "admin") // samo admin smije mijenjati naziv, kod i cijenu  proizvoda, te dodavati i brisati popuste
+            {
+                changeCodeButton.Enabled = false;
+                changeNameButton.Enabled = false;
+                changePriceButton.Enabled = false;
+                addDiscButton.Enabled = false;
+                delButton.Enabled = false;
+            }
             db = new dataBase();
             showDiscounts();
 
@@ -41,12 +51,11 @@ namespace Trgovina2
             List<discount> discountList = db.getDiscountsByProuctId(_id); //dohvaćamo sve popuste za zadani proizvod
             discountControl header = new discountControl(); //zaglavlje tablice
             header.Width = discountTable.Width;
-            header.chgButton = false;
+            header.chgButton = false; //mičemo gumbe s kontrole (jer je to zaglavlje)
             header.optionCombo = false;
             header.delButton = false;
             header.textSize = 10;
             RowStyle temp = discountTable.RowStyles[0];
-            ColumnStyle temp2 = discountTable.ColumnStyles[0];
 
             discountTable.RowStyles.Add(new RowStyle(temp.SizeType, temp.Height));
             discountTable.Controls.Add(header, 0, discountTable.RowCount - 1); //dodaj zaglavlje u tablicu
@@ -54,7 +63,7 @@ namespace Trgovina2
             discountTable.RowCount++;
             foreach (discount d in discountList) //dodajemo popuste u tablicu
             {
-                discountControl disc = new discountControl(); //stvaramo novu kontrolu za popust
+                discountControl disc = new discountControl(_name); //stvaramo novu kontrolu za popust
                 disc.id = d.id;
                 disc.productId = d.productId;
                 disc.percent = d.percent;

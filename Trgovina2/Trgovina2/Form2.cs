@@ -78,7 +78,7 @@ namespace Trgovina2
         private void button5_Click(object sender, EventArgs e)
         {
             //this.Hide();
-            ListOfProducts f = new ListOfProducts();
+            ListOfProducts f = new ListOfProducts(Form1.name);
             f.Show();
             CheckForNotif(); // osvjezi obavijesti
         }

@@ -19,6 +19,15 @@ namespace Trgovina2
             InitializeComponent();
         }
 
+        public discountControl(string name)
+        {
+            InitializeComponent();
+            if(name != "admin")
+            {
+                deleteButton.Enabled = false;
+            }
+        }
+
         public int id
         {
             set { _id = value; }
