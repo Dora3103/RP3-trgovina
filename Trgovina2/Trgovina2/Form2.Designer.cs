@@ -171,7 +171,7 @@ namespace Trgovina2
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Worker";
-            this.Text = "Worker";
+            this.Text = "Rad";
             this.ResumeLayout(false);
             this.PerformLayout();
 

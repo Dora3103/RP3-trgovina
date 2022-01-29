@@ -75,7 +75,7 @@
             // textBoxCode
             // 
             this.textBoxCode.Location = new System.Drawing.Point(188, 32);
-            this.textBoxCode.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxCode.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxCode.Name = "textBoxCode";
             this.textBoxCode.Size = new System.Drawing.Size(161, 20);
             this.textBoxCode.TabIndex = 8;
@@ -83,7 +83,7 @@
             // textBoxName
             // 
             this.textBoxName.Location = new System.Drawing.Point(9, 32);
-            this.textBoxName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxName.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(161, 20);
             this.textBoxName.TabIndex = 7;
@@ -91,7 +91,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(368, 32);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(74, 19);
             this.button1.TabIndex = 6;
@@ -119,7 +119,7 @@
             "Čekovi",
             "Bonovi"});
             this.comboBox1.Location = new System.Drawing.Point(9, 454);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(161, 21);
             this.comboBox1.TabIndex = 24;
@@ -127,7 +127,7 @@
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(188, 402);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(74, 19);
             this.button3.TabIndex = 23;
@@ -148,7 +148,7 @@
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(9, 403);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(161, 20);
             this.textBox3.TabIndex = 21;
@@ -156,7 +156,7 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(188, 343);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(74, 19);
             this.button2.TabIndex = 20;
@@ -187,7 +187,7 @@
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(9, 343);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(161, 20);
             this.textBox2.TabIndex = 17;
@@ -195,7 +195,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(9, 299);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(161, 20);
             this.textBox1.TabIndex = 16;
@@ -204,7 +204,7 @@
             // 
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(308, 299);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(428, 141);
             this.flowLayoutPanel1.TabIndex = 27;
@@ -212,7 +212,7 @@
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(663, 454);
-            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(74, 19);
             this.button4.TabIndex = 26;
@@ -228,7 +228,7 @@
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(9, 63);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
@@ -289,9 +289,9 @@
             this.Controls.Add(this.textBoxCode);
             this.Controls.Add(this.textBoxName);
             this.Controls.Add(this.button1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AddBill";
-            this.Text = "Add bill";
+            this.Text = "Racun";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

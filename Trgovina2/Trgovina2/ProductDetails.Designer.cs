@@ -176,7 +176,7 @@
             this.addDiscButton.AutoSize = true;
             this.addDiscButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.addDiscButton.Location = new System.Drawing.Point(102, 358);
-            this.addDiscButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addDiscButton.Margin = new System.Windows.Forms.Padding(2);
             this.addDiscButton.Name = "addDiscButton";
             this.addDiscButton.Size = new System.Drawing.Size(96, 28);
             this.addDiscButton.TabIndex = 14;
@@ -188,7 +188,7 @@
             // 
             this.changeNameButton.AutoSize = true;
             this.changeNameButton.Location = new System.Drawing.Point(245, 16);
-            this.changeNameButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.changeNameButton.Margin = new System.Windows.Forms.Padding(2);
             this.changeNameButton.Name = "changeNameButton";
             this.changeNameButton.Size = new System.Drawing.Size(70, 27);
             this.changeNameButton.TabIndex = 15;
@@ -200,7 +200,7 @@
             // 
             this.changeCodeButton.AutoSize = true;
             this.changeCodeButton.Location = new System.Drawing.Point(199, 63);
-            this.changeCodeButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.changeCodeButton.Margin = new System.Windows.Forms.Padding(2);
             this.changeCodeButton.Name = "changeCodeButton";
             this.changeCodeButton.Size = new System.Drawing.Size(70, 27);
             this.changeCodeButton.TabIndex = 16;
@@ -212,7 +212,7 @@
             // 
             this.changePriceButton.AutoSize = true;
             this.changePriceButton.Location = new System.Drawing.Point(199, 160);
-            this.changePriceButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.changePriceButton.Margin = new System.Windows.Forms.Padding(2);
             this.changePriceButton.Name = "changePriceButton";
             this.changePriceButton.Size = new System.Drawing.Size(70, 27);
             this.changePriceButton.TabIndex = 17;
@@ -226,7 +226,7 @@
             this.nameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.nameTextBox.Location = new System.Drawing.Point(8, 16);
-            this.nameTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nameTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.ReadOnly = true;
             this.nameTextBox.Size = new System.Drawing.Size(219, 22);
@@ -240,7 +240,7 @@
             this.codeTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.codeTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.codeTextBox.Location = new System.Drawing.Point(95, 65);
-            this.codeTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.codeTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.codeTextBox.Name = "codeTextBox";
             this.codeTextBox.ReadOnly = true;
             this.codeTextBox.Size = new System.Drawing.Size(88, 16);
@@ -254,7 +254,7 @@
             this.priceTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.priceTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.priceTextBox.Location = new System.Drawing.Point(95, 162);
-            this.priceTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.priceTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.priceTextBox.Name = "priceTextBox";
             this.priceTextBox.ReadOnly = true;
             this.priceTextBox.Size = new System.Drawing.Size(88, 16);
@@ -273,7 +273,7 @@
             this.discountTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66666F));
             this.discountTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66666F));
             this.discountTable.Location = new System.Drawing.Point(8, 394);
-            this.discountTable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.discountTable.Margin = new System.Windows.Forms.Padding(2);
             this.discountTable.Name = "discountTable";
             this.discountTable.RowCount = 1;
             this.discountTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -286,7 +286,7 @@
             this.delButton.AutoSize = true;
             this.delButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.delButton.Location = new System.Drawing.Point(548, 18);
-            this.delButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.delButton.Margin = new System.Windows.Forms.Padding(2);
             this.delButton.Name = "delButton";
             this.delButton.Size = new System.Drawing.Size(70, 27);
             this.delButton.TabIndex = 22;
@@ -320,9 +320,9 @@
             this.Controls.Add(this.catLabel);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ProductDetails";
-            this.Text = "ProductDetails";
+            this.Text = "Detalji proizvoda";
             this.ResumeLayout(false);
             this.PerformLayout();
 

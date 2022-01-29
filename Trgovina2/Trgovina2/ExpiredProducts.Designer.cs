@@ -91,7 +91,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.productTable);
             this.Name = "ExpiredProducts";
-            this.Text = "ExpiredProducts";
+            this.Text = "Rok trajanja";
             this.ResumeLayout(false);
             this.PerformLayout();
 

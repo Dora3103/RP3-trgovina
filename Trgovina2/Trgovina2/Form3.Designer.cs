@@ -49,7 +49,7 @@ namespace Trgovina2
             this.ClientSize = new System.Drawing.Size(488, 397);
             this.Controls.Add(this.addProduct1);
             this.Name = "Newproduct";
-            this.Text = "Newproduct";
+            this.Text = "Novi proizvod";
             this.ResumeLayout(false);
 
         }

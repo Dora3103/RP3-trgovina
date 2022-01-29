@@ -57,7 +57,7 @@ namespace Trgovina2
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(111, 23);
             this.button2.TabIndex = 3;
-            this.button2.Text = "Add new worker";
+            this.button2.Text = "Registriraj ";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -66,18 +66,18 @@ namespace Trgovina2
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(35, 42);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 13);
+            this.label1.Size = new System.Drawing.Size(86, 13);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Enter new username:";
+            this.label1.Text = "Unesi username:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(35, 88);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(106, 13);
+            this.label2.Size = new System.Drawing.Size(85, 13);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Enter new password:";
+            this.label2.Text = "Unesi password:";
             // 
             // Register
             // 
@@ -91,7 +91,7 @@ namespace Trgovina2
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Name = "Register";
-            this.Text = "Register";
+            this.Text = "Registracija";
             this.ResumeLayout(false);
             this.PerformLayout();
 

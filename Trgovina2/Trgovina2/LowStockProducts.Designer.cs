@@ -81,7 +81,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.productTable);
             this.Name = "LowStockProducts";
-            this.Text = "LowStockProducts";
+            this.Text = "Zalihe";
             this.ResumeLayout(false);
             this.PerformLayout();
 

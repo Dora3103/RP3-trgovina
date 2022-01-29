@@ -60,7 +60,7 @@
             this.Controls.Add(this.productTable);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ListOfProducts";
-            this.Text = "ListOfProducts";
+            this.Text = "Lista proizvoda";
             this.ResumeLayout(false);
 
         }
