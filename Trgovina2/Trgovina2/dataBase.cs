@@ -441,7 +441,7 @@ namespace Trgovina2
             return ret;
         }
 
-        public void changeDiscountPercent(int percentId, double percent)
+        public void changeDiscountPercent(int percentId, double percent) //promijeni postotak popusta
         {
 
             OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\login.accdb");
@@ -461,7 +461,7 @@ namespace Trgovina2
             }
         }
 
-        public void changeDiscountFrom(int percentId, DateTime from)
+        public void changeDiscountFrom(int percentId, DateTime from) //promijeni datum početka popusta
         {
             OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\login.accdb");
             try
@@ -480,7 +480,7 @@ namespace Trgovina2
             }
         }
 
-        public void changeDiscountTo(int percentId, DateTime to)
+        public void changeDiscountTo(int percentId, DateTime to) //promijeni datum završetka popusta
         {
             OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\login.accdb");
             try

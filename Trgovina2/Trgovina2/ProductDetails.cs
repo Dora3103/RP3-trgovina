@@ -128,22 +128,22 @@ namespace Trgovina2
             discountTable.RowStyles.Add(new RowStyle(temp.SizeType, temp.Height));
             discountTable.Controls.Add(disc, 0, discountTable.RowCount - 1); //dodaj novu kontrolu u tablicu
             discountTable.SetColumnSpan(disc, discountTable.ColumnCount);
-            disc.change += (sender1, e1) =>
+            disc.change += (sender1, e1) => //događaj za promijenu
             {
                 string option = disc.option;
                 if (option == "Postotak")
                 {
-                    db.changeDiscountPercent(e1.id, e1.percent);
+                    db.changeDiscountPercent(e1.id, e1.percent); //mijenjamo postotak
                 }
 
                 else if (option == "Datum početka")
                 {
-                    db.changeDiscountFrom(e1.id, e1.from);
+                    db.changeDiscountFrom(e1.id, e1.from); //mijenjamo datum početka
                 }
 
                 else if (option == "Datum završetka")
                 {
-                    db.changeDiscountTo(e1.id, e1.to);
+                    db.changeDiscountTo(e1.id, e1.to); //mijenjamo datum završetka
                 }
             };
 
@@ -182,6 +182,7 @@ namespace Trgovina2
             if (e.KeyCode == Keys.Enter)    //potvrda je pritisak na enter
             {
                 TextBox tb = (TextBox)sender;
+                Console.WriteLine(tb.Text);
                 db.changeName(_id, tb.Text);
                 tb.ReadOnly = true;
                 label2.Focus();

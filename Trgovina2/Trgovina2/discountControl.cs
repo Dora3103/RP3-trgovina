@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Trgovina2
 {
-    public partial class discountControl : UserControl
+    public partial class discountControl : UserControl //kontrola popust
     {
         private int _id;
         private int _productId;
@@ -24,7 +24,9 @@ namespace Trgovina2
             InitializeComponent();
             if(name != "admin")
             {
-                deleteButton.Enabled = false;
+                deleteButton.Enabled = false; //samo admin smije brisati ili mijenjati popust
+                changeButton.Enabled = false;
+                chooseComboBox.Enabled = false;
             }
         }
 
@@ -115,23 +117,23 @@ namespace Trgovina2
         public event EventHandler<discount> change;
         public event EventHandler<discount> delete;
 
-        private void changeButton_Click(object sender, EventArgs e)
+        private void changeButton_Click(object sender, EventArgs e) //promijeni popust
         {
             
             string option = chooseComboBox.Text;
-            if (option == "Postotak")
+            if (option == "Postotak") //upiši novi postotak
             {
                 percentTextBox.ReadOnly = false;
                 percentTextBox.Text = "";
                 percentTextBox.Focus();
             }
-            else if (option == "Datum početka")
+            else if (option == "Datum početka") //upiši novi datum početka
             {
                 fromTextBox.ReadOnly = false;
                 fromTextBox.Text = "";
                 fromTextBox.Focus();
             }
-            else if (option == "Datum završetka")
+            else if (option == "Datum završetka") //upiši novi datum završetka
             {
                 toTextBox.ReadOnly = false;
                 toTextBox.Text = "";
@@ -154,7 +156,7 @@ namespace Trgovina2
             }
         }
 
-        private void percentTextBox_KeyUp(object sender, KeyEventArgs e)
+        private void percentTextBox_KeyUp(object sender, KeyEventArgs e) //potvrdi novi postotak
         {
             if (e.KeyCode == Keys.Enter)    //potvrda je pritisak na enter
             {
@@ -175,7 +177,7 @@ namespace Trgovina2
             }
         }
 
-        private void fromTextBox_KeyUp(object sender, KeyEventArgs e)
+        private void fromTextBox_KeyUp(object sender, KeyEventArgs e) //potvrdi novi datum početka
         {
             if (e.KeyCode == Keys.Enter)    //potvrda je pritisak na enter
             {
@@ -196,7 +198,7 @@ namespace Trgovina2
             }
         }
 
-        private void toTextBox_KeyUp(object sender, KeyEventArgs e)
+        private void toTextBox_KeyUp(object sender, KeyEventArgs e) //potvrdi novi datum završetka
         {
             if (e.KeyCode == Keys.Enter)    //potvrda je pritisak na enter
             {
