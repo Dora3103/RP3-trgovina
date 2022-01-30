@@ -12,36 +12,27 @@ namespace Trgovina2
 {
     public partial class LowStockProducts : Form
     {
-        public LowStockProducts()
+        // Parametar quant predstavlja zeljenu minimalnu kolicinu proizvoda. 
+        // Kad kolicina proizvoda koju imamo dostupnu padne ispod te kolicine, 
+        // stvaramo obavijest. 
+        public LowStockProducts(int quant)
         {
             this.MinimumSize = new System.Drawing.Size(800, 400);
             InitializeComponent();
-            showList(0);
+
+            textBox1.Text = quant.ToString();
+            showList(quant);
         }
 
 
-        private List<proizvod> GetLowInStockProducts(int quant)
-        {
-            dataBase db = new dataBase();
-            List<proizvod> proizvodi = db.allProducts();
-
-            // Lista koja ce sadrzavati proizvode s niskim zalihama.
-            List<proizvod> low_in_stock = new List<proizvod>();
-
-            foreach (proizvod p in proizvodi)
-            {
-                // Provjera kolicine proizvoda. 
-                if (p.quant <= quant)
-                {
-                    low_in_stock.Add(p);
-                }
-            }
-            return low_in_stock;
-        }
-
+        // Prikazuje tablicu koja sadrzi sve one proizvode kojih na zalihi ima manje od zadane kolicine. 
         private void showList(int quant)
         {
-            List<proizvod> low_in_stock = GetLowInStockProducts(quant);
+            dataBase db = new dataBase();
+            List<proizvod> low_in_stock = db.productsLowQuantity(quant);
+
+            productTable.Controls.Clear();
+            productTable.RowCount = 1;
 
             // Inicijalizacija tablice kojom cemo prikazati proizvode s niskim zalihama,
             productControl header = new productControl();
@@ -50,6 +41,7 @@ namespace Trgovina2
             header.textSize = 12;
             RowStyle temp = productTable.RowStyles[0];
             ColumnStyle temp2 = productTable.ColumnStyles[0];
+
 
             productTable.RowStyles.Add(new RowStyle(temp.SizeType, temp.Height));
             productTable.Controls.Add(header, 0, productTable.RowCount - 1);
@@ -86,7 +78,8 @@ namespace Trgovina2
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            // Praznimo tablicu. 
+            // Praznimo tablicu kad se promijenio argument pretrage. 
+            // Tablicu cemo ponovno popuniti s novim rezultatima.
             while (productTable.Controls.Count > 0)
             {
                 productTable.Controls[0].Dispose();

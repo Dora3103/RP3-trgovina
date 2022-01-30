@@ -115,7 +115,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(338, 266);
+            this.textBox2.Location = new System.Drawing.Point(373, 266);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(43, 20);
             this.textBox2.TabIndex = 9;
@@ -126,9 +126,9 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(47, 269);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(285, 13);
+            this.label7.Size = new System.Drawing.Size(320, 13);
             this.label7.TabIndex = 8;
-            this.label7.Text = "Obavijesti me kad količina nekog proizvoda bude manja od";
+            this.label7.Text = "Obavijesti me kad količina nekog proizvoda bude manja ili jednaka";
             // 
             // ShowNotifications
             // 

@@ -127,3 +127,4 @@ C:\Users\matij\OneDrive\Radna površina\faks\3. semestar\racunarski praktikum 3\
 C:\Users\matij\OneDrive\Radna površina\faks\3. semestar\racunarski praktikum 3\RP3-trgovina\Trgovina2\Trgovina2\obj\Debug\Trgovina2.LowStockProducts.resources
 C:\Users\matij\OneDrive\Radna površina\faks\3. semestar\racunarski praktikum 3\RP3-trgovina\Trgovina2\Trgovina2\obj\Debug\Trgovina2.ProductDetails.resources
 C:\Users\matij\OneDrive\Radna površina\faks\3. semestar\racunarski praktikum 3\RP3-trgovina\Trgovina2\Trgovina2\obj\Debug\Trgovina2.ShowNotifications.resources
+C:\Users\gegic\Desktop\rp3-trgovina\Trgovina2\Trgovina2\obj\Debug\Trgovina2.LowStockProducts.resources

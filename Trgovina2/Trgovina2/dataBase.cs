@@ -363,5 +363,79 @@ namespace Trgovina2
             }
             return ret;
         }
+
+        // Vraca sve proizvode kojima rok istice unutar zadanog broja dana. 
+        public List<proizvod> productsToExpire(int days)
+        {
+            List<proizvod> ret = new List<proizvod>();
+            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\login.accdb");
+
+            DateTime cutoff_date = DateTime.Now.AddDays(days);
+            try
+            {
+                con.Open();
+
+                OleDbDataAdapter sda = new OleDbDataAdapter("select * from proizvodi where Rok_trajanja <= " + cutoff_date.ToOADate() + " order by Rok_trajanja, Naziv", con);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                foreach (DataRow r in dt.Rows)
+                {
+                    ret.Add(new proizvod()
+                    {
+                        id = int.Parse(r["ID"].ToString()),
+                        name = r["Naziv"].ToString(),
+                        cat = r["Kategorija"].ToString(),
+                        price = double.Parse(r["Cijena"].ToString()),
+                        quant = int.Parse(r["Kolicina"].ToString()),
+                        code = r["Kod"].ToString(),
+                        exp = DateTime.Parse(r["Rok_trajanja"].ToString()),
+                        date = DateTime.Parse(r["Datum_nabave"].ToString())
+                    });
+                }
+                con.Close();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+
+            return ret;
+        }
+
+        // Vraca sve proizvode kojih na zalihi ima manje ili jednako zadanoj kolicini. 
+        public List<proizvod> productsLowQuantity(int quant)
+        {
+            List<proizvod> ret = new List<proizvod>();
+            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\login.accdb");
+            try
+            {
+                con.Open();
+
+                OleDbDataAdapter sda = new OleDbDataAdapter("select * from proizvodi where Kolicina <= " + quant.ToString() + " order by Rok_trajanja, Naziv", con);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                foreach (DataRow r in dt.Rows)
+                {
+                    ret.Add(new proizvod()
+                    {
+                        id = int.Parse(r["ID"].ToString()),
+                        name = r["Naziv"].ToString(),
+                        cat = r["Kategorija"].ToString(),
+                        price = double.Parse(r["Cijena"].ToString()),
+                        quant = int.Parse(r["Kolicina"].ToString()),
+                        code = r["Kod"].ToString(),
+                        exp = DateTime.Parse(r["Rok_trajanja"].ToString()),
+                        date = DateTime.Parse(r["Datum_nabave"].ToString())
+                    });
+                }
+                con.Close();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+
+            return ret;
+        }
     }
 }

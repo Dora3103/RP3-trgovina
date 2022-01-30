@@ -14,8 +14,8 @@ namespace Trgovina2
     public partial class Worker : Form
     {
 
-        int expiration_days = 0;
-        int min_amount = 0;
+        int expiration_days = 3;
+        int min_amount = 5;
         public Worker()
         {
             this.MinimumSize = new System.Drawing.Size(480, 360);
@@ -102,6 +102,9 @@ namespace Trgovina2
             CheckForNotif(); // osvjezi obavijesti
         }
 
+        // Provjerava postoji li nesto zbog cega treba prikazati obavijest. 
+        // Ako da, postavlja znak lampice, koji ostaje vidljiv sve dok je istinit uvjet za prikaz obavijesti, tj.
+        // dokle god postoje proizvodi kojima uskoro istice rok ili kojih nema dovoljno na zalihi. 
         private void CheckForNotif() {
             bool notification = false;
 

@@ -12,38 +12,26 @@ namespace Trgovina2
 {
     public partial class ExpiredProducts : Form
     {
-        public ExpiredProducts()
+        // Argument days predstavlja broj dana za koji provjeravamo rok trajanja. 
+        // Ako je npr. days = 3, onda cemo promatrati sve one proizvode kojima rok istice
+        // unutar sljedecih 3 dana. 
+        public ExpiredProducts(int days)
         {
             this.MinimumSize = new System.Drawing.Size(800, 400);
             InitializeComponent();
-            showList(0);
+            textBox1.Text = days.ToString();
+            showList(days);
         }
 
-
-        private List<proizvod> GetExpiredProducts(int days)
-        {
-            dataBase db = new dataBase();
-            List<proizvod> proizvodi = db.allProducts();
-
-            // Ova lista ce sadrzavati sve proizvode kojima je prosao rok.
-            List<proizvod> expired_products = new List<proizvod>();
-
-            // Vrijednost koju cemo koristiti za usporedbu. 
-            DateTime cutoff_date = DateTime.Now.AddDays(days);
-            foreach (proizvod p in proizvodi)
-            {
-                // Provjera je li datum isteka roka trajanja <= granica. 
-                if (DateTime.Compare(p.exp, cutoff_date) <= 0)
-                {
-                    expired_products.Add(p);
-                }
-            }
-            return expired_products;
-        }
-
+        // Prikazuje u tablici listu svih proizvoda kojima rok trajanje istice
+        // unutar zadanog broja dana. 
         private void showList(int days)
         {
-            List<proizvod> expired_products = GetExpiredProducts(days);
+            dataBase db = new dataBase();
+            List<proizvod> expired_products = db.productsToExpire(days);
+
+            productTable.Controls.Clear();
+            productTable.RowCount = 1;
 
             // Inicijaliziramo tablicu u kojoj cemo prikazati proizvode isteklog roka. 
             productControl header = new productControl();
@@ -75,6 +63,7 @@ namespace Trgovina2
                 productTable.RowStyles.Add(new RowStyle(temp.SizeType, temp.Height));
                 productTable.Controls.Add(prod, 0, productTable.RowCount - 1);
                 productTable.SetColumnSpan(prod, productTable.ColumnCount);
+
                 // Omogucavamo prikaz vise detalja za proizvod koristenjem ProductDetails objekta. 
                 prod.detail += (sender, e) =>
                 {
@@ -89,7 +78,8 @@ namespace Trgovina2
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            // Praznimo tablicu. 
+            // Praznimo tablicu kad se promijenio argument pretrage. 
+            // Tablicu cemo ponovno popuniti s novim rezultatima.
             while (productTable.Controls.Count > 0)
             {
                 productTable.Controls[0].Dispose();

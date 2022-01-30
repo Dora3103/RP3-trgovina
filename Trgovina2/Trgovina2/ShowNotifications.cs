@@ -15,6 +15,7 @@ namespace Trgovina2
 {
     public partial class ShowNotifications : Form
     {
+        // Pamtimo broj dana i kolicinu proizvoda za koje treba pokazati obavijest. 
         int num_days_to_check = 0;
         int low_quantity_threshold = 0;
         public ShowNotifications(int d, int k)
@@ -105,13 +106,13 @@ namespace Trgovina2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ExpiredProducts exp_p = new ExpiredProducts();
+            ExpiredProducts exp_p = new ExpiredProducts(num_days_to_check);
             exp_p.ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            LowStockProducts l = new LowStockProducts();
+            LowStockProducts l = new LowStockProducts(low_quantity_threshold);
             l.ShowDialog();
         }
 
