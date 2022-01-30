@@ -266,6 +266,7 @@ namespace Trgovina2
             OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\login.accdb");
             try
             {
+                con.Open();
 
                 OleDbCommand cmd = new OleDbCommand("update proizvodi set Naziv = '" + name + "' where ID =  " + id, con);
                 int updated = cmd.ExecuteNonQuery();
@@ -285,6 +286,7 @@ namespace Trgovina2
             OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\login.accdb");
             try
             {
+                con.Open();
 
                 OleDbCommand cmd = new OleDbCommand("update proizvodi set Cijena = " + price + " where ID =  " + id, con);
                 int updated = cmd.ExecuteNonQuery();
@@ -304,6 +306,7 @@ namespace Trgovina2
             OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\login.accdb");
             try
             {
+                con.Open();
 
                 OleDbCommand cmd = new OleDbCommand("update proizvodi set Kod = '" + code + "' where ID =  " + id, con);
                 int updated = cmd.ExecuteNonQuery();
@@ -444,6 +447,7 @@ namespace Trgovina2
             OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\login.accdb");
             try
             {
+                con.Open();
 
                 OleDbCommand cmd = new OleDbCommand("update popust set postotakPopusta = " + percent + " where ID =  " + percentId, con);
                 int updated = cmd.ExecuteNonQuery();
@@ -462,6 +466,7 @@ namespace Trgovina2
             OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\login.accdb");
             try
             {
+                con.Open();
 
                 OleDbCommand cmd = new OleDbCommand("update popust set datumOd = " + from.ToString("#d/M/yyyy#") + " where ID =  " + percentId, con);
                 int updated = cmd.ExecuteNonQuery();
@@ -480,6 +485,7 @@ namespace Trgovina2
             OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\login.accdb");
             try
             {
+                con.Open();
 
                 OleDbCommand cmd = new OleDbCommand("update popust set datumDo = " + to.ToString("#d/M/yyyy#") + " where ID =  " + percentId, con);
                 int updated = cmd.ExecuteNonQuery();

@@ -82,17 +82,17 @@ namespace Trgovina2
                     string option = disc.option;
                     if (option == "Postotak")
                     {
-                        db.changeDiscountPercent(e1.id, e1.percent);
+                        db.changeDiscountPercent(e.id, e.percent);
                     }
 
                     else if (option == "Datum početka")
                     {
-                        db.changeDiscountFrom(e1.id, e1.from);
+                        db.changeDiscountFrom(e.id, e.from);
                     }
 
                     else if (option == "Datum završetka")
                     {
-                        db.changeDiscountTo(e1.id, e1.to);
+                        db.changeDiscountTo(e.id, e.to);
                     }
                 };
 
@@ -112,9 +112,11 @@ namespace Trgovina2
 
             addDiscount add = new addDiscount(_id); //stvaramo dijalog za dodavanje popusta
             DialogResult res = add.ShowDialog();
-            if (res == DialogResult.Cancel) return;
+            Console.WriteLine(res);
+            if (res != DialogResult.Yes) return;
             discount d = db.getNewestDiscount(_id); //dohvaćamo novi popust
             discountControl disc = new discountControl(); //stvaramo kontrolu za novi popust
+
             disc.id = d.id;
             disc.productId = d.productId;
             disc.percent = d.percent;
@@ -129,7 +131,20 @@ namespace Trgovina2
             disc.change += (sender1, e1) =>
             {
                 string option = disc.option;
-                //db.changeDiscountPercent(e.id, e.percent)
+                if (option == "Postotak")
+                {
+                    db.changeDiscountPercent(e1.id, e1.percent);
+                }
+
+                else if (option == "Datum početka")
+                {
+                    db.changeDiscountFrom(e1.id, e1.from);
+                }
+
+                else if (option == "Datum završetka")
+                {
+                    db.changeDiscountTo(e1.id, e1.to);
+                }
             };
 
             disc.delete += (sender1, e1) => //dodajemo događaj za brisanje popusta

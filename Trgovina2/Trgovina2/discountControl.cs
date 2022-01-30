@@ -117,6 +117,7 @@ namespace Trgovina2
 
         private void changeButton_Click(object sender, EventArgs e)
         {
+            
             string option = chooseComboBox.Text;
             if (option == "Postotak")
             {
@@ -172,6 +173,7 @@ namespace Trgovina2
                 tb.ReadOnly = true;
                 chooseComboBox.Focus();
             }
+        }
 
         private void fromTextBox_KeyUp(object sender, KeyEventArgs e)
         {
@@ -192,6 +194,7 @@ namespace Trgovina2
                 tb.ReadOnly = true;
                 chooseComboBox.Focus();
             }
+        }
 
         private void toTextBox_KeyUp(object sender, KeyEventArgs e)
         {
@@ -212,6 +215,7 @@ namespace Trgovina2
                 tb.ReadOnly = true;
                 chooseComboBox.Focus();
             }
+        }
     }
 
     

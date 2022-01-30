@@ -21,6 +21,7 @@ namespace Trgovina2
 
         private void button1_Click(object sender, EventArgs e)
         {
+            this.DialogResult = DialogResult.Yes;
             dataBase db = new dataBase();
             discount d = new discount()
             {
