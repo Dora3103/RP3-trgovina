@@ -55,7 +55,12 @@ namespace Trgovina2
                      ProductDetails prodDet = new ProductDetails(p, name);
                      prodDet.ShowDialog(); //otvori dialog s detaljima o proizvodu
                      proizvod newP = db.getProductById(p.id); //promijeni podatke u tablici proizvoda (ako je bilo promijena)
-                     prod.id = newP.id;
+                    if(newP.id == -1000) //proizvod je obrisan iz base, obriši ga iz tablice
+                    {
+                        productTable.Controls.Remove(prod);
+                        return;
+                    }
+                     prod.id = newP.id; //promijeni podatke
                      prod.name = newP.name;
                      prod.code = newP.code;
                      prod.exp = newP.exp;

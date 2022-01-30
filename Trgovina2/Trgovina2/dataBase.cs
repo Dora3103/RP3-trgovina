@@ -509,6 +509,11 @@ namespace Trgovina2
                 OleDbDataAdapter sda = new OleDbDataAdapter("select * from proizvodi where ID = " + id, con);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
+                if(dt.Rows.Count == 0) //prozvod ne postoji
+                {
+                    ret.id = -1000;
+                    return ret;
+                }
                 ret.id = int.Parse(dt.Rows[0]["id"].ToString());
                 ret.price = double.Parse(dt.Rows[0]["Cijena"].ToString());
                 ret.name = dt.Rows[0]["Naziv"].ToString();
