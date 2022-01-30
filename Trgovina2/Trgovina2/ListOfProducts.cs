@@ -23,7 +23,7 @@ namespace Trgovina2
         private void showList() //stvaramo listu svih proizvoda
         {
             dataBase db = new dataBase();
-            List<proizvod> proizvodi = db.allProducts(); //dohvaćamo sve proizvoda
+            List<proizvod> products = db.allProducts(); //dohvaćamo sve proizvoda
 
             productControl header = new productControl(); //zaglavllje tablice
             header.Width = productTable.Width;
@@ -36,7 +36,7 @@ namespace Trgovina2
             productTable.Controls.Add(header, 0, productTable.RowCount - 1); //dodaj zaglavlje u tablicu
             productTable.SetColumnSpan(header, productTable.ColumnCount);
             productTable.RowCount++;
-            foreach (proizvod p in proizvodi) //dodajemo proizvode u tablicu
+            foreach (proizvod p in products) //dodajemo proizvode u tablicu
             {
                 productControl prod = new productControl();
                 prod.id = p.id;
@@ -45,8 +45,6 @@ namespace Trgovina2
                 prod.exp = p.exp;
                 prod.price = p.price;
                 prod.Width = productTable.Width;
-                //prod.labelMaxWidth = (int)Math.Ceiling(temp2.Width);
-                //prod.labelAutoSize = true;
 
                 temp = productTable.RowStyles[0]; //dodaj kontrolu u tablicu
                 productTable.RowStyles.Add(new RowStyle(temp.SizeType, temp.Height));
@@ -56,6 +54,13 @@ namespace Trgovina2
                 {
                      ProductDetails prodDet = new ProductDetails(p, name);
                      prodDet.ShowDialog(); //otvori dialog s detaljima o proizvodu
+                     proizvod newP = db.getProductById(p.id); //promijeni podatke u tablici proizvoda (ako je bilo promijena)
+                     prod.id = newP.id;
+                     prod.name = newP.name;
+                     prod.code = newP.code;
+                     prod.exp = newP.exp;
+                     prod.price = newP.price;
+                     prod.Width = productTable.Width;
                 };
 
                 productTable.RowCount++;

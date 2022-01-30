@@ -498,5 +498,34 @@ namespace Trgovina2
                 //return false;
             }
         }
+
+        public proizvod getProductById(int id) //dohvati proizvod s ID-em id
+        {
+            proizvod ret = new proizvod();
+            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\login.accdb");
+            try
+            {
+                con.Open();
+                OleDbDataAdapter sda = new OleDbDataAdapter("select * from proizvodi where ID = " + id, con);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                ret.id = int.Parse(dt.Rows[0]["id"].ToString());
+                ret.price = double.Parse(dt.Rows[0]["Cijena"].ToString());
+                ret.name = dt.Rows[0]["Naziv"].ToString();
+                ret.cat = dt.Rows[0]["Kategorija"].ToString();
+                ret.quant = int.Parse(dt.Rows[0]["Kolicina"].ToString());
+                ret.code = dt.Rows[0]["Kod"].ToString();
+                ret.exp = DateTime.Parse(dt.Rows[0]["Rok_trajanja"].ToString());
+                ret.date = DateTime.Parse(dt.Rows[0]["Datum_nabave"].ToString());
+                con.Close();
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return ret;
+            }
+            return ret;
+        }
     }
 }
