@@ -80,7 +80,20 @@ namespace Trgovina2
                 disc.change += (sender, e) =>
                 {
                     string option = disc.option;
-                    //db.changeDiscountPercent(e.id, e.percent)
+                    if (option == "Postotak")
+                    {
+                        db.changeDiscountPercent(e1.id, e1.percent);
+                    }
+
+                    else if (option == "Datum početka")
+                    {
+                        db.changeDiscountFrom(e1.id, e1.from);
+                    }
+
+                    else if (option == "Datum završetka")
+                    {
+                        db.changeDiscountTo(e1.id, e1.to);
+                    }
                 };
 
                 disc.delete += (sender, e) => //dodajemo događaj brisanja popusta

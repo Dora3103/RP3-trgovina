@@ -47,6 +47,7 @@
             this.percentTextBox.Size = new System.Drawing.Size(88, 17);
             this.percentTextBox.TabIndex = 0;
             this.percentTextBox.Text = "Postotak";
+            this.percentTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.percentTextBox_KeyUp);
             // 
             // changeButton
             // 
@@ -84,6 +85,7 @@
             this.fromTextBox.Size = new System.Drawing.Size(138, 17);
             this.fromTextBox.TabIndex = 5;
             this.fromTextBox.Text = "Datum početka";
+            this.fromTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.fromTextBox_KeyUp);
             // 
             // toTextBox
             // 
@@ -96,6 +98,7 @@
             this.toTextBox.Size = new System.Drawing.Size(135, 17);
             this.toTextBox.TabIndex = 6;
             this.toTextBox.Text = "Datum završetka";
+            this.toTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.toTextBox_KeyUp);
             // 
             // deleteButton
             // 

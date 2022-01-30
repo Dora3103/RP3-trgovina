@@ -437,5 +437,60 @@ namespace Trgovina2
 
             return ret;
         }
+
+        public void changeDiscountPercent(int percentId, double percent)
+        {
+
+            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\login.accdb");
+            try
+            {
+
+                OleDbCommand cmd = new OleDbCommand("update popust set postotakPopusta = " + percent + " where ID =  " + percentId, con);
+                int updated = cmd.ExecuteNonQuery();
+                con.Close();
+                //return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                //return false;
+            }
+        }
+
+        public void changeDiscountFrom(int percentId, DateTime from)
+        {
+            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\login.accdb");
+            try
+            {
+
+                OleDbCommand cmd = new OleDbCommand("update popust set datumOd = " + from.ToString("#d/M/yyyy#") + " where ID =  " + percentId, con);
+                int updated = cmd.ExecuteNonQuery();
+                con.Close();
+                //return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                //return false;
+            }
+        }
+
+        public void changeDiscountTo(int percentId, DateTime to)
+        {
+            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\login.accdb");
+            try
+            {
+
+                OleDbCommand cmd = new OleDbCommand("update popust set datumDo = " + to.ToString("#d/M/yyyy#") + " where ID =  " + percentId, con);
+                int updated = cmd.ExecuteNonQuery();
+                con.Close();
+                //return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                //return false;
+            }
+        }
     }
 }

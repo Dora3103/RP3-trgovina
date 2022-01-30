@@ -117,16 +117,24 @@ namespace Trgovina2
 
         private void changeButton_Click(object sender, EventArgs e)
         {
-            if(change != null)
+            string option = chooseComboBox.Text;
+            if (option == "Postotak")
             {
-                change(sender, new discount()
-                {
-                    id = _id,
-                    productId = _productId,
-                    percent = percent,
-                    from = from,
-                    to = to
-                });
+                percentTextBox.ReadOnly = false;
+                percentTextBox.Text = "";
+                percentTextBox.Focus();
+            }
+            else if (option == "Datum početka")
+            {
+                fromTextBox.ReadOnly = false;
+                fromTextBox.Text = "";
+                fromTextBox.Focus();
+            }
+            else if (option == "Datum završetka")
+            {
+                toTextBox.ReadOnly = false;
+                toTextBox.Text = "";
+                toTextBox.Focus();
             }
         }
 
@@ -144,6 +152,66 @@ namespace Trgovina2
                 });
             }
         }
+
+        private void percentTextBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)    //potvrda je pritisak na enter
+            {
+                TextBox tb = (TextBox)sender;
+                if (change != null)
+                {
+                    change(sender, new discount()
+                    {
+                        id = _id,
+                        productId = _productId,
+                        percent = percent,
+                        from = from,
+                        to = to
+                    });
+                }
+                tb.ReadOnly = true;
+                chooseComboBox.Focus();
+            }
+
+        private void fromTextBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)    //potvrda je pritisak na enter
+            {
+                TextBox tb = (TextBox)sender;
+                if (change != null)
+                {
+                    change(sender, new discount()
+                    {
+                        id = _id,
+                        productId = _productId,
+                        percent = percent,
+                        from = from,
+                        to = to
+                    });
+                }
+                tb.ReadOnly = true;
+                chooseComboBox.Focus();
+            }
+
+        private void toTextBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)    //potvrda je pritisak na enter
+            {
+                TextBox tb = (TextBox)sender;
+                if (change != null)
+                {
+                    change(sender, new discount()
+                    {
+                        id = _id,
+                        productId = _productId,
+                        percent = percent,
+                        from = from,
+                        to = to
+                    });
+                }
+                tb.ReadOnly = true;
+                chooseComboBox.Focus();
+            }
     }
 
     
