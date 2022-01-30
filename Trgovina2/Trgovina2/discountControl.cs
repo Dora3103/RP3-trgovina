@@ -14,6 +14,8 @@ namespace Trgovina2
     {
         private int _id;
         private int _productId;
+        public DateTime lastValidFrom;
+        public DateTime lastValidTo;
         public discountControl()
         {
             InitializeComponent();
@@ -28,6 +30,7 @@ namespace Trgovina2
                 changeButton.Enabled = false;
                 chooseComboBox.Enabled = false;
             }
+           
         }
 
         public int id
@@ -51,13 +54,13 @@ namespace Trgovina2
         public DateTime from //datum početka popusta
         {
             get { return DateTime.Parse(fromTextBox.Text); }
-            set { fromTextBox.Text = value.ToString("d.M.yyyy"); }
+            set { fromTextBox.Text = value.ToString("d.M.yyyy"); lastValidFrom = value; }
         }
 
         public DateTime to //datum završetka popusta
         {
             get { return DateTime.Parse(toTextBox.Text); }
-            set { toTextBox.Text = value.ToString("d.M.yyyy"); }
+            set { toTextBox.Text = value.ToString("d.M.yyyy"); lastValidTo = value; }
         }
 
         public bool chgButton
@@ -182,6 +185,13 @@ namespace Trgovina2
             if (e.KeyCode == Keys.Enter)    //potvrda je pritisak na enter
             {
                 TextBox tb = (TextBox)sender;
+                DateTime dt = new DateTime();
+                if (!DateTime.TryParse(tb.Text, out dt)) //provjeri je li upisani datum
+                {
+                    tb.Text = lastValidFrom.ToString("d.MM.yyyy"); //ako nije upisan datum, ostavi prijašnju vrijednost
+                    chooseComboBox.Focus();
+                    return;
+                }
                 if (change != null)
                 {
                     change(sender, new discount()
@@ -203,6 +213,13 @@ namespace Trgovina2
             if (e.KeyCode == Keys.Enter)    //potvrda je pritisak na enter
             {
                 TextBox tb = (TextBox)sender;
+                DateTime dt = new DateTime();
+                if(!DateTime.TryParse(tb.Text, out dt)) //provjeri je li upisani datum
+                {
+                    tb.Text = lastValidTo.ToString("d.MM.yyyy"); //ako nije upisan datum, ostavi prijašnju vrijednost
+                    chooseComboBox.Focus();
+                    return;
+                }
                 if (change != null)
                 {
                     change(sender, new discount()

@@ -69,8 +69,8 @@ namespace Trgovina2
                 disc.percent = d.percent;
                 disc.from = d.from;
                 disc.to = d.to;
-                //prod.labelMaxWidth = (int)Math.Ceiling(temp2.Width);
-                //prod.labelAutoSize = true;
+                disc.lastValidFrom = d.from;
+                disc.lastValidTo = d.to;
 
                 temp = discountTable.RowStyles[0];
 
@@ -122,6 +122,8 @@ namespace Trgovina2
             disc.percent = d.percent;
             disc.from = d.from;
             disc.to = d.to;
+            disc.lastValidFrom = d.from;
+            disc.lastValidTo = d.to;
 
             RowStyle temp = discountTable.RowStyles[0];
 
